@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core'
+    ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8010",  # Example for a React frontend
+    "https://yourfrontenddomain.com",
 ]
 
 MIDDLEWARE = [
@@ -48,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'core.middleware.ThreatDetectionMiddleware',
+    
     ]
 
 ROOT_URLCONF = 'AIWebRequestThreatAnalysis.urls'
@@ -122,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SUSPICOUS_BLOCK_TIMEOUT_SECONDS = 3600 

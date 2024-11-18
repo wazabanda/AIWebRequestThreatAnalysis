@@ -25,3 +25,150 @@
 2024-11-18 08:16:28,924 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
 2024-11-18 08:16:38,051 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
 2024-11-18 08:16:42,075 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 08:37:38,370 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/AIWebRequestThreatAnalysis/settings.py changed, reloading.
+2024-11-18 08:44:35,650 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/AIWebRequestThreatAnalysis/settings.py changed, reloading.
+2024-11-18 09:00:49,690 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/models.py changed, reloading.
+2024-11-18 09:25:15,286 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 09:25:15,377 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:15,379 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:25:15,723 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:25:15,798 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:15,799 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:25:47,331 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 09:25:47,418 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:47,420 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:25:47,613 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:25:47,699 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:47,700 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:25:49,064 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 09:25:49,132 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:49,133 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:25:49,292 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:25:49,383 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:49,384 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:25:50,640 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 09:25:50,740 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:50,741 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:25:50,903 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:25:50,978 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:25:50,978 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:26:18,791 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /admin
+2024-11-18 09:26:18,903 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:26:18,904 - django.request - ERROR - Internal Server Error: /admin
+2024-11-18 09:26:19,122 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:26:19,165 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:26:19,165 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:27:30,242 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 09:27:30,349 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:27:30,350 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:27:30,593 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:27:30,695 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:27:30,696 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:28:06,056 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 09:28:06,067 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /homeusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 09:28:06,067 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /home
+2024-11-18 09:28:06,068 - django.request - WARNING - Forbidden: /home
+2024-11-18 09:28:33,616 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 09:28:37,016 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 09:28:37,097 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:28:37,098 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:28:37,222 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /favicon.ico
+2024-11-18 09:28:37,297 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:28:37,298 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:29:33,988 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 09:29:37,458 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:29:37,460 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:29:37,692 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:29:37,692 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:29:49,786 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:29:49,791 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:29:49,966 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:29:49,967 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:30:16,321 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:30:16,321 - django.request - ERROR - Internal Server Error: /home
+2024-11-18 09:30:16,487 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:30:16,487 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:31:21,145 - httpx - INFO - HTTP Request: POST http://localhost:8000/home?username=waza&password=somepassword%27%20OR%201%3D1 "HTTP/1.1 404 Not Found"
+2024-11-18 09:31:21,146 - django.request - WARNING - Not Found: /home
+2024-11-18 09:31:37,039 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:31:37,039 - django.request - ERROR - Internal Server Error: /home
+2024-11-18 09:31:37,206 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:31:37,207 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:31:40,188 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:31:40,189 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:31:40,468 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:31:40,469 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:31:56,358 - httpx - INFO - HTTP Request: POST http://localhost:8000/home?username=waza&password=somepassword%27%20OR%201%3D1 "HTTP/1.1 404 Not Found"
+2024-11-18 09:31:56,359 - django.request - WARNING - Not Found: /home
+2024-11-18 09:32:05,428 - httpx - INFO - HTTP Request: POST http://localhost:8000/home "HTTP/1.1 404 Not Found"
+2024-11-18 09:32:05,434 - django.request - WARNING - Not Found: /home
+2024-11-18 09:32:13,367 - httpx - INFO - HTTP Request: POST http://localhost:8000/home "HTTP/1.1 404 Not Found"
+2024-11-18 09:32:13,368 - django.request - WARNING - Not Found: /home
+2024-11-18 09:32:24,466 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:32:24,467 - django.request - ERROR - Internal Server Error: /home
+2024-11-18 09:32:24,780 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:32:24,781 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:34:22,764 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/AIWebRequestThreatAnalysis/settings.py changed, reloading.
+2024-11-18 09:38:51,274 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:38:51,276 - django.request - ERROR - Internal Server Error: /home
+2024-11-18 09:38:51,519 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:38:51,521 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:38:56,816 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:38:56,817 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:38:57,060 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:38:57,060 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:40:17,762 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:40:17,867 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:40:18,060 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:40:18,061 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:40:25,616 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:40:25,619 - django.request - ERROR - Internal Server Error: /home
+2024-11-18 09:40:25,877 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:40:25,878 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:40:57,353 - httpx - INFO - HTTP Request: POST http://localhost:8000/home "HTTP/1.1 404 Not Found"
+2024-11-18 09:40:57,354 - django.request - WARNING - Not Found: /home
+2024-11-18 09:42:58,989 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 09:43:09,742 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:43:09,744 - django.request - ERROR - Internal Server Error: /home
+2024-11-18 09:43:09,966 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:43:09,966 - django.request - ERROR - Internal Server Error: /favicon.ico
+2024-11-18 09:43:32,560 - httpx - INFO - HTTP Request: POST http://localhost:8000/home "HTTP/1.1 404 Not Found"
+2024-11-18 09:43:32,561 - django.request - WARNING - Not Found: /home
+2024-11-18 09:45:49,532 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 09:46:19,572 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 09:46:27,064 - httpx - INFO - HTTP Request: GET http://localhost:8000/home "HTTP/1.1 404 Not Found"
+2024-11-18 09:46:27,065 - django.request - WARNING - Not Found: /home
+2024-11-18 09:46:27,239 - httpx - INFO - HTTP Request: GET http://localhost:8000/favicon.ico "HTTP/1.1 404 Not Found"
+2024-11-18 09:46:27,240 - django.request - WARNING - Not Found: /favicon.ico
+2024-11-18 09:46:33,699 - httpx - INFO - HTTP Request: GET http://localhost:8000/admin "HTTP/1.1 301 Moved Permanently"
+2024-11-18 09:46:33,711 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:46:33,712 - django.request - ERROR - Internal Server Error: /admin
+2024-11-18 09:46:42,623 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:46:42,643 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:46:42,644 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:47:25,493 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:47:25,504 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:47:25,504 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:48:42,567 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:48:42,582 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:48:42,583 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:48:42,730 - httpx - INFO - HTTP Request: GET http://localhost:8000/favicon.ico "HTTP/1.1 404 Not Found"
+2024-11-18 09:48:42,731 - django.request - WARNING - Not Found: /favicon.ico
+2024-11-18 09:48:49,309 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:48:49,320 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:48:49,320 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:49:08,716 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:49:08,728 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:49:08,728 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:49:33,526 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:49:33,541 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:49:33,542 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:50:07,290 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 09:50:07,301 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:50:07,302 - django.request - ERROR - Internal Server Error: /
+2024-11-18 09:50:40,817 - httpx - INFO - HTTP Request: GET http://localhost:8000/admin "HTTP/1.1 301 Moved Permanently"
+2024-11-18 09:50:40,833 - root - ERROR - Error forwarding request: Request URL is missing an 'http://' or 'https://' protocol.
+2024-11-18 09:50:40,834 - django.request - ERROR - Internal Server Error: /admin
+2024-11-18 09:51:07,266 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 09:51:10,566 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 09:51:10,567 - django.request - ERROR - Internal Server Error: /admin

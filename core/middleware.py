@@ -1,4 +1,5 @@
 import re
+from numpy._core.defchararray import startswith
 import pandas as pd
 import joblib  # or any other model loading mechanism
 import logging
@@ -43,7 +44,9 @@ class ThreatDetectionMiddleware:
 
         path = request.path
         query_params = request.GET.urlencode()  # Get query parameters as a string
-      
+        print(path)
+        if not startswith(path,"/check"):
+            return self.forward_request(request)
         origin_ip = self.get_client_ip(request)
 
         logging.info(f"Request received from IP: {origin_ip} to PATH: {request.path}")
@@ -147,7 +150,7 @@ class ThreatDetectionMiddleware:
     def forward_request(self, request):
         # Forward the request to the destination application
         try:
-            with httpx.Client() as client:
+            with httpx.Client(follow_redirects=False) as client:
                 response = client.request(
                     method=request.method,
                     url=f"{DESTINATION_URL}{request.path}",
