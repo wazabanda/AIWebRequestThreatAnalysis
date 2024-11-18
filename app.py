@@ -4,12 +4,12 @@ import joblib  # or any other model loading mechanism
 from fastapi import FastAPI, Request, Response
 import httpx
 import logging
-
+from sus import bad_words
 # Initialize FastAPI app
 app = FastAPI()
 
 # Destination URL (web application)
-DESTINATION_URL = "http://localhost:8001"  # Modify to your web application's URL
+DESTINATION_URL = "http://localhost:8000"  # Modify to your web application's URL
 
 # Logging setup
 logging.basicConfig(
@@ -23,17 +23,15 @@ logging.basicConfig(
 # Load the machine learning model (ensure this is the correct path to your model file)
 model = joblib.load("./request_threat_model.pkl")  # Modify with the correct path to your saved model
 
-# List of bad words (from PHP, JavaScript, Python, etc.)
-bad_words = [
-    "select", "insert", "update", "delete", "union", "drop", "eval", "exec", "base64_decode", 
-    "system", "shell", "phpinfo", "alert", "document.cookie", "exec", "os.system", "os.popen"
-]
+
 
 # Function to analyze and detect threats in request data
 async def analyze_request(request: Request) -> bool:
     # Extract data from request
     query_params = request.query_params
+    print(query_params)
     path = request.url.path
+    path +=str(query_params)
     body = (await request.body()).decode("utf-8") if request.method != "GET" else ""
     
     # Analyze the path and body for symbols and bad words
@@ -56,6 +54,7 @@ async def analyze_request(request: Request) -> bool:
     feature_data = pd.DataFrame([combined_features], columns=feature_columns)
     feature_data.fillna(0,inplace=True)
     print(body)
+    print(path)
     print(feature_data)
     # Check if the path or body contains any bad words
     if any(word.lower() in path.lower() for word in bad_words) or \
