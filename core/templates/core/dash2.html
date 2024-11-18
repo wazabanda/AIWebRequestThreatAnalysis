@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Analysis Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/htmx.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto p-6">
+        <!-- Back Button -->
+        <a href="dashboard.html" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Dashboard
+        </a>
+
+        <!-- IP Information Header -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900" id="ip-address" hx-get="/api/ip-details" hx-trigger="load">192.168.1.100</h1>
+                        <p class="text-gray-500 mt-1">First seen: 2024-03-10 08:23:45</p>
+                    </div>
+                    <div class="px-3 py-1 rounded-full bg-red-100 text-red-800 text-sm font-medium">
+                        High Risk
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 class="text-sm font-medium text-gray-600">Total Attempts</h3>
+                <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/attempts" hx-trigger="load every 30s">
+                    1,234
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 class="text-sm font-medium text-gray-600">Success Rate</h3>
+                <div class="mt-2 text-2xl font-bold text-red-600" hx-get="/api/ip-stats/success-rate" hx-trigger="load every 30s">
+                    2.4%
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 class="text-sm font-medium text-gray-600">Average Request Size</h3>
+                <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/avg-size" hx-trigger="load every 30s">
+                    2.3 KB
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h3 class="text-sm font-medium text-gray-600">Last Attempt</h3>
+                <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/last-attempt" hx-trigger="load every 30s">
+                    2 mins ago
+                </div>
+            </div>
+        </div>
+
+        <!-- Request Pattern Analysis -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+            <div class="p-6 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-900">Request Pattern Analysis</h2>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 w-32">Most Common Path:</span>
+                        <span class="text-sm font-mono bg-gray-100 px-2 py-1 rounded">/api/auth/login</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 w-32">Request Method:</span>
+                        <span class="text-sm font-mono bg-gray-100 px-2 py-1 rounded">POST (92%)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 w-32">User Agent:</span>
+                        <span class="text-sm font-mono bg-gray-100 px-2 py-1 rounded">Mozilla/5.0 (compatible; Bot/1.0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-lg font-semibold text-gray-900">Request History</h2>
+                    <div class="flex space-x-2">
+                        <select class="text-sm border border-gray-300 rounded px-2 py-1"
+                                hx-get="/api/attempts"
+                                hx-target="#attempts-table"
+                                name="filter">
+                            <option value="all">All Requests</option>
+                            <option value="failed">Failed Only</option>
+                            <option value="success">Successful Only</option>
+                            <option value="with-body">With Request Body</option>
+                        </select>
+                        <select class="text-sm border border-gray-300 rounded px-2 py-1"
+                                hx-get="/api/attempts"
+                                hx-target="#attempts-table"
+                                name="timeframe">
+                            <option value="1h">Last Hour</option>
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                            <option value="30d">Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full" id="attempts-table">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Timestamp</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Path</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request Body</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-03-15 14:23:45</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">POST</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">/api/auth/login</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">401</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.2 KB</td>
+                            <td class="px-6 py-4 text-sm">
+                                <button class="text-blue-600 hover:text-blue-800"
+                                        onclick="toggleRequestBody('req-body-1')">
+                                    Show Body
+                                </button>
+                                <div id="req-body-1" class="hidden mt-2">
+                                    <pre class="text-xs bg-gray-50 p-2 rounded"><code class="language-json">{
+        "username": "admin",
+        "password": "[REDACTED]",
+        "remember": true
+    }</code></pre>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600">
+                                <button hx-get="/api/request-details/1"
+                                        hx-target="#request-modal"
+                                        class="hover:underline">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-03-15 14:23:42</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">POST</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">/api/users/create</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">403</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.4 KB</td>
+                            <td class="px-6 py-4 text-sm">
+                                <button class="text-blue-600 hover:text-blue-800"
+                                        onclick="toggleRequestBody('req-body-2')">
+                                    Show Body
+                                </button>
+                                <div id="req-body-2" class="hidden mt-2">
+                                    <pre class="text-xs bg-gray-50 p-2 rounded"><code class="language-json">{
+        "username": "newadmin",
+        "email": "admin@example.com",
+        "role": "admin",
+        "permissions": ["all"]
+    }</code></pre>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600">
+                                <button hx-get="/api/request-details/2"
+                                        hx-target="#request-modal"
+                                        class="hover:underline">
+                                    View Details
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination remains the same -->
+        </div>
+    
+        <!-- Updated Request Details Modal -->
+        <div id="request-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+            <div class="relative top-20 mx-auto p-5 border w-full max-w-4xl shadow-lg rounded-md bg-white">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Request Details</h3>
+                    <button onclick="document.getElementById('request-modal').classList.add('hidden')" class="text-gray-400 hover:text-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-500">Request Details</h4>
+                            <div class="mt-2 space-y-2">
+                                <div class="text-sm"><span class="font-medium">Method:</span> POST</div>
+                                <div class="text-sm"><span class="font-medium">Path:</span> /api/auth/login</div>
+                                <div class="text-sm"><span class="font-medium">Timestamp:</span> 2024-03-15 14:23:45</div>
+                                <div class="text-sm"><span class="font-medium">Status:</span> 401 Unauthorized</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-500">Request Headers</h4>
+                            <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (compatible; Bot/1.0)",
+        "Accept": "application/json",
+        "Content-Length": "1234"
+    }</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-500">Request Body</h4>
+                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{
+        "username": "admin",
+        "password": "[REDACTED]",
+        "remember": true,
+        "additional_params": {
+            "client_id": "mobile_app",
+            "grant_type": "password"
+        }
+    }</code></pre>
+                    </div>
+    
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-500">Response Body</h4>
+                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{
+        "error": "invalid_credentials",
+        "message": "Invalid username or password",
+        "timestamp": "2024-03-15T14:23:45Z"
+    }</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            // Toggle request body visibility
+            function toggleRequestBody(id) {
+                const element = document.getElementById(id);
+                if (element.classList.contains('hidden')) {
+                    element.classList.remove('hidden');
+                    // Trigger Prism.js highlighting
+                    Prism.highlightElement(element.querySelector('code'));
+                } else {
+                    element.classList.add('hidden');
+                }
+            }
+    
+            // Initialize syntax highlighting
+            document.addEventListener('htmx:afterSwap', function(event) {
+                Prism.highlightAll();
+            });
+    
+            // Modal handling
+            document.body.addEventListener('click', function(event) {
+                if (event.target.matches('[hx-target="#request-modal"]')) {
+                    document.getElementById('request-modal').classList.remove('hidden');
+                }
+            });
+        </script>
+</body>
+</html>

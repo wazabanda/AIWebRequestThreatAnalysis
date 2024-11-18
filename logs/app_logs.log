@@ -172,3 +172,147 @@
 2024-11-18 09:51:07,266 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
 2024-11-18 09:51:10,566 - root - ERROR - Error forwarding request: bad Content-Length
 2024-11-18 09:51:10,567 - django.request - ERROR - Internal Server Error: /admin
+2024-11-18 10:00:44,121 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:00:57,644 - django.request - WARNING - Not Found: /iot/
+2024-11-18 10:01:22,029 - django.request - WARNING - Not Found: /iot/
+2024-11-18 10:01:41,221 - django.request - WARNING - Not Found: /iot/
+2024-11-18 10:01:47,987 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:01:50,427 - root - ERROR - Error forwarding request: bad Content-Length
+2024-11-18 10:01:50,428 - django.request - ERROR - Internal Server Error: /iot/
+2024-11-18 10:02:45,793 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:04:07,210 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:04:10,402 - root - INFO - Redirecting request from /iot/ to http://localhost:8000
+2024-11-18 10:04:10,430 - django.request - ERROR - Internal Server Error: /iot/
+Traceback (most recent call last):
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 55, in __call__
+    return self.forward_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 164, in forward_request
+    return HttpResponseRedirect(redirect_url + request.path[len(route):])
+           ^^^^^^^^^^^^^^^^^^^^
+NameError: name 'HttpResponseRedirect' is not defined
+2024-11-18 10:04:37,462 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:04:48,951 - root - INFO - Redirecting request from /iot/ to http://localhost:8000
+2024-11-18 10:05:35,150 - django.request - WARNING - Not Found: /home
+2024-11-18 10:05:43,514 - root - INFO - Redirecting request from /iot/home to http://localhost:8000
+2024-11-18 10:06:02,447 - django.request - WARNING - Not Found: /home
+2024-11-18 10:06:49,498 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:06:59,810 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 10:06:59,817 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /homeusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 10:06:59,817 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /home
+2024-11-18 10:06:59,818 - django.request - WARNING - Forbidden: /home
+2024-11-18 10:07:10,906 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot
+2024-11-18 10:07:10,913 - root - INFO - Redirecting request from /iot to http://localhost:8000
+2024-11-18 10:07:24,907 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot
+2024-11-18 10:07:24,915 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 51, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /iotusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 10:07:24,915 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /iot
+2024-11-18 10:07:24,915 - django.request - WARNING - Forbidden: /iot
+2024-11-18 10:09:38,719 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:10:52,167 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot/
+2024-11-18 10:10:52,218 - django.request - ERROR - Internal Server Error: /iot/
+Traceback (most recent call last):
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 167, in forward_request
+    forward_url = urljoin(destination_url, request.path[len(route):])
+                  ^^^^^^^
+NameError: name 'urljoin' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 63, in __call__
+    return self.forward_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 208, in forward_request
+    except requests.RequestException as e:
+           ^^^^^^^^
+NameError: name 'requests' is not defined. Did you mean: 'request'?
+2024-11-18 10:11:34,588 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:11:59,326 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot/
+2024-11-18 10:11:59,361 - django.request - ERROR - Internal Server Error: /iot/
+Traceback (most recent call last):
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 64, in __call__
+    return self.forward_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py", line 168, in forward_request
+    forward_url = urljoin(destination_url, request.path[len(route):])
+                  ^^^^^^^
+NameError: name 'urljoin' is not defined
+2024-11-18 10:12:23,738 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:12:48,496 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot/
+2024-11-18 10:12:48,511 - root - INFO - Forwarding request from /iot/ to http://localhost:8000/
+2024-11-18 10:14:55,306 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /accounts/login/
+2024-11-18 10:14:55,307 - root - INFO - Bad word detected in path or body, Request from IP:{origin_ip} to PATH {path}
+2024-11-18 10:14:55,307 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /accounts/login/
+2024-11-18 10:14:55,307 - django.request - WARNING - Forbidden: /accounts/login/
+2024-11-18 10:22:35,143 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /accounts/login/
+2024-11-18 10:22:35,160 - django.request - WARNING - Not Found: /accounts/login/
+2024-11-18 10:22:39,138 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /admin/
+2024-11-18 10:22:39,177 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /admin/login/
+2024-11-18 10:22:39,184 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 4, 'path_length': 29, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /admin/login/next=%2Fadmin%2F 
+2024-11-18 10:22:39,185 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /admin/login/
+2024-11-18 10:22:39,185 - django.request - WARNING - Forbidden: /admin/login/
+2024-11-18 10:22:49,302 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /admin/
+2024-11-18 10:22:49,327 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /admin/login/
+2024-11-18 10:22:49,333 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 4, 'path_length': 29, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /admin/login/next=%2Fadmin%2F 
+2024-11-18 10:22:49,334 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /admin/login/
+2024-11-18 10:22:49,334 - django.request - WARNING - Forbidden: /admin/login/
+2024-11-18 10:22:54,736 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot/
+2024-11-18 10:22:54,746 - root - INFO - Forwarding request from /iot/ to http://localhost:8000/
+2024-11-18 10:22:58,515 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /accounts/login/
+2024-11-18 10:22:58,516 - root - INFO - Bad word detected in path or body, Request from IP:{origin_ip} to PATH {path}
+2024-11-18 10:22:58,516 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /accounts/login/
+2024-11-18 10:22:58,516 - django.request - WARNING - Forbidden: /accounts/login/
+2024-11-18 10:23:24,467 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 10:23:38,849 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot
+2024-11-18 10:23:38,857 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 51, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /iotusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 10:23:38,857 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /iot
+2024-11-18 10:23:38,858 - django.request - WARNING - Forbidden: /iot
+2024-11-18 10:23:50,771 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot/admin
+2024-11-18 10:23:50,778 - root - INFO - Forwarding request from /iot/admin to http://localhost:8000/admin
+2024-11-18 10:23:51,493 - django.request - ERROR - Internal Server Error: /iot/admin
+2024-11-18 10:23:59,836 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /iot/admin
+2024-11-18 10:23:59,847 - root - INFO - Forwarding request from /iot/admin to http://localhost:8000/admin
+2024-11-18 10:24:09,285 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /admin/login/
+2024-11-18 10:24:09,287 - root - INFO - Bad word detected in path or body, Request from IP:{origin_ip} to PATH {path}
+2024-11-18 10:24:09,287 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /admin/login/
+2024-11-18 10:24:09,287 - django.request - WARNING - Forbidden: /admin/login/
+2024-11-18 10:24:24,214 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /
+2024-11-18 10:28:48,920 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 10:43:02,383 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/models.py changed, reloading.
+2024-11-18 10:44:29,653 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/models.py changed, reloading.
+2024-11-18 10:59:18,652 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/AIWebRequestThreatAnalysis/settings.py changed, reloading.
+2024-11-18 11:14:27,992 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/iot/admin
+2024-11-18 11:14:28,057 - httpx - INFO - HTTP Request: POST http://localhost:8000/iot/admin "HTTP/1.1 404 Not Found"
+2024-11-18 11:14:35,616 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 11:14:35,791 - httpx - INFO - HTTP Request: POST http://localhost:8000/ "HTTP/1.1 403 Forbidden"
+2024-11-18 11:14:55,987 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 11:14:56,052 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 11:14:56,071 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:14:56,103 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 1, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 4, 'path_length': 24, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0} , Request from IP:127.0.0.1 to PATH /accounts/login/next=%2F
+2024-11-18 11:14:56,103 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:00,340 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 11:15:00,386 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 11:15:00,411 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:00,441 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 1, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 4, 'path_length': 24, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0} , Request from IP:127.0.0.1 to PATH /accounts/login/next=%2F
+2024-11-18 11:15:00,441 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:28,418 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:28,448 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 1, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 4, 'path_length': 24, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0} , Request from IP:127.0.0.1 to PATH /accounts/login/next=%2F
+2024-11-18 11:15:28,448 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:31,087 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 11:15:31,138 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 11:15:31,162 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:31,199 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 1, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 4, 'path_length': 24, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0} , Request from IP:127.0.0.1 to PATH /accounts/login/next=%2F
+2024-11-18 11:15:31,199 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:45,235 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 11:15:45,300 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 11:15:45,369 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/CACHE/css/output.97fd2be4fbd1.css
+2024-11-18 11:15:45,430 - httpx - INFO - HTTP Request: GET http://localhost:8000/static/CACHE/css/output.97fd2be4fbd1.css "HTTP/1.1 200 OK"

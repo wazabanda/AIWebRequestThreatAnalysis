@@ -24,6 +24,7 @@ class RequestSuspicousLog(models.Model):
     suspicous_IP = models.ForeignKey(to=SuspicousIP,on_delete=models.PROTECT)
     destination_route = models.CharField(max_length=255)
     body = models.TextField()
+    headers = models.TextField(blank=True)
     method = models.CharField(max_length=10,choices=METHODS)
     timestamp = models.DateTimeField(default=timezone.now)
         
