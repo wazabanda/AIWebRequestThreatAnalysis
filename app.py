@@ -57,11 +57,11 @@ async def analyze_request(request: Request) -> bool:
     feature_data.fillna(0,inplace=True)
     print(body)
     print(feature_data)
-    # # Check if the path or body contains any bad words
-    # if any(word.lower() in path.lower() for word in bad_words) or \
-    #    any(word.lower() in body.lower() for word in bad_words):
-    #     logging.info(f"Bad word detected in path or body")
-    #     return False  # Block the request
+    # Check if the path or body contains any bad words
+    if any(word.lower() in path.lower() for word in bad_words) or \
+       any(word.lower() in body.lower() for word in bad_words):
+        logging.info(f"Bad word detected in path or body")
+        return False  # Block the request
 
     # Predict using the trained model
     prediction = model.predict(feature_data)

@@ -24,3 +24,29 @@
 2024-11-08 19:00:23,063 - root - WARNING - Blocked request to http://127.0.0.1:8002/admin
 2024-11-08 19:01:58,638 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 0, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 1, 'path_length': 6, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 4, 'body_dashes': 4, 'body_braces': 0, 'body_spaces': 4, 'body_percentages': 0, 'body_semicolons': 2, 'body_angle_brackets': 0, 'body_special_chars': 4, 'body_length': 170, 'body_badwords_count': 0}
 2024-11-08 19:01:58,667 - root - WARNING - Blocked request to http://127.0.0.1:8002/admin
+2024-11-12 17:42:40,381 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin "HTTP/1.1 301 Moved Permanently"
+2024-11-12 17:42:40,569 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/ "HTTP/1.1 302 Found"
+2024-11-12 17:42:41,216 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/login/?next=%2Fadmin%2F "HTTP/1.1 200 OK"
+2024-11-12 17:43:20,197 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin?username=admin%27%20OR%201%20%3D%201&password=1234 "HTTP/1.1 301 Moved Permanently"
+2024-11-12 17:43:20,251 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/?username=admin%27%20OR%201%20%3D%201&password=1234 "HTTP/1.1 302 Found"
+2024-11-12 17:43:20,319 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/login/?next=%2Fadmin%2F%3Fusername%3Dadmin%2527%2520OR%25201%2520%253D%25201%26password%3D1234 "HTTP/1.1 200 OK"
+2024-11-12 17:44:15,151 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin?username=admin%27%20OR%201%20%3D%201&password=1234 "HTTP/1.1 301 Moved Permanently"
+2024-11-12 17:44:15,209 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/?username=admin%27%20OR%201%20%3D%201&password=1234 "HTTP/1.1 302 Found"
+2024-11-12 17:44:15,270 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/login/?next=%2Fadmin%2F%3Fusername%3Dadmin%2527%2520OR%25201%2520%253D%25201%26password%3D1234 "HTTP/1.1 200 OK"
+2024-11-12 18:19:43,399 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin?username=admin%27%20OR%201%20%3D%201&password=1234 "HTTP/1.1 301 Moved Permanently"
+2024-11-12 18:19:43,430 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/?username=admin%27%20OR%201%20%3D%201&password=1234 "HTTP/1.1 302 Found"
+2024-11-12 18:19:43,462 - httpx - INFO - HTTP Request: GET http://localhost:8001/admin/login/?next=%2Fadmin%2F%3Fusername%3Dadmin%2527%2520OR%25201%2520%253D%25201%26password%3D1234 "HTTP/1.1 200 OK"
+2024-11-12 18:35:37,688 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:36:05,744 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:36:32,090 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:36:40,315 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:37:36,393 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:37:44,759 - httpx - INFO - HTTP Request: GET http://localhost:8001/ "HTTP/1.1 200 OK"
+2024-11-12 18:37:50,372 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:39:40,421 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:39:45,953 - root - INFO - Threat detected based on model prediction
+2024-11-12 18:44:35,081 - httpx - INFO - HTTP Request: GET http://localhost:8001/h "HTTP/1.1 404 Not Found"
+2024-11-12 18:44:45,663 - httpx - INFO - HTTP Request: GET http://localhost:8001/home "HTTP/1.1 404 Not Found"
+2024-11-12 18:45:08,962 - httpx - INFO - HTTP Request: GET http://localhost:8001/home?username=waza&password=somepassword "HTTP/1.1 404 Not Found"
+2024-11-12 18:45:21,733 - httpx - INFO - HTTP Request: GET http://localhost:8001/home?username=waza%27%20OR%201%20%3D%201&password=somepassword "HTTP/1.1 404 Not Found"
+2024-11-12 18:46:01,068 - httpx - INFO - HTTP Request: GET http://localhost:8001/home?username=waza%27%20OR%201%3D1&password=somepassword "HTTP/1.1 404 Not Found"
