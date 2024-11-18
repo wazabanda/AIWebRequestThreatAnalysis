@@ -1,0 +1,27 @@
+2024-11-18 08:00:49,587 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}
+2024-11-18 08:00:49,587 - root - WARNING - Blocked request to /home
+2024-11-18 08:00:49,588 - django.request - WARNING - Forbidden: /home
+2024-11-18 08:06:36,135 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 08:11:43,525 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:11:43,532 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /home 
+2024-11-18 08:11:43,532 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:11:43,533 - django.request - WARNING - Forbidden: /home
+2024-11-18 08:14:06,625 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 08:14:27,174 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:14:27,183 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /homeusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 08:14:27,183 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:14:27,184 - django.request - WARNING - Forbidden: /home
+2024-11-18 08:14:33,889 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:14:33,895 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /homeusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 08:14:33,896 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:14:33,896 - django.request - WARNING - Forbidden: /home
+2024-11-18 08:14:57,171 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:14:57,200 - httpx - INFO - HTTP Request: POST http://localhost:8000/home "HTTP/1.1 404 Not Found"
+2024-11-18 08:14:57,200 - django.request - WARNING - Not Found: /home
+2024-11-18 08:15:05,121 - root - INFO - Request received from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:15:05,131 - root - INFO - Threat detected based on model prediction: {'path_single_q': 0, 'path_double_q': 0, 'path_dashes': 0, 'path_braces': 0, 'path_spaces': 0, 'path_percentages': 2, 'path_semicolons': 0, 'path_angle_brackets': 0, 'path_special_chars': 6, 'path_length': 52, 'path_badwords_count': 0, 'body_single_q': 0, 'body_double_q': 0, 'body_dashes': 0, 'body_braces': 0, 'body_spaces': 0, 'body_percentages': 0, 'body_semicolons': 0, 'body_angle_brackets': 0, 'body_special_chars': 0, 'body_length': 0, 'body_badwords_count': 0}, Request from IP:127.0.0.1 to PATH /homeusername=waza&password=somepassword%27+OR+1%3D1 
+2024-11-18 08:15:05,132 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: /home
+2024-11-18 08:15:05,132 - django.request - WARNING - Forbidden: /home
+2024-11-18 08:16:28,924 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 08:16:38,051 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
+2024-11-18 08:16:42,075 - django.utils.autoreload - INFO - /run/media/wazab/SmallerDrive/GitHub/AIWebRequestThreatAnalysis/core/middleware.py changed, reloading.
