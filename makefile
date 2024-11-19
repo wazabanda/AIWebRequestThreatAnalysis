@@ -9,7 +9,7 @@ run-local:
 	python manage.py runserver 0.0.0.0:8000
 
 fast:
-	uvicorn middleware:app --host 0.0.0.0 --port 8010
+	uvicorn middleware:app --host 0.0.0.0 --port 8010 --reload
 
 daphne:
 	daphne -b 0.0.0.0 -p 8000 IOTCloudServer.asgi:application --verbosity 2

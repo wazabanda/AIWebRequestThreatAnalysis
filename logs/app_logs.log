@@ -316,3 +316,478 @@ NameError: name 'urljoin' is not defined
 2024-11-18 11:15:45,300 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
 2024-11-18 11:15:45,369 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/CACHE/css/output.97fd2be4fbd1.css
 2024-11-18 11:15:45,430 - httpx - INFO - HTTP Request: GET http://localhost:8000/static/CACHE/css/output.97fd2be4fbd1.css "HTTP/1.1 200 OK"
+2024-11-18 16:50:17,023 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 16:50:18,427 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 16:50:18,462 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 16:50:18,527 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 16:50:32,010 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:50:32,032 - root - INFO - Bad word detected in path or body
+2024-11-18 16:50:32,032 - root - INFO - Bad word detected in path or body, Request from IP:{origin_ip} to PATH {path}
+2024-11-18 16:50:32,032 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:53:48,588 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:53:48,997 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 16:53:57,021 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:53:57,046 - root - INFO - Bad word detected in path or body, Request from IP:127.0.0.1 to PATH /accounts/login/ BODY csrfmiddlewaretoken=qFbqzHCciZXcE7D9zXv0j2w07iZuDH25eXF2xWBsrrusXv3IsOyUrhEcuUrZlRz1&login=admin&password=0002%23waza
+2024-11-18 16:53:57,046 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:56:26,294 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:56:26,363 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 16:56:35,666 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:56:35,687 - root - INFO - Bad word detected in path or body, Request from IP:127.0.0.1 to PATH /accounts/login/ BODY csrfmiddlewaretoken=UwQBbtNQBlfjERC2yva4LdR9ZiKJYHTlIOkd9IM6KNMzXf2BrmdYTsZlmUceGRqh&login=admin&password=0002%23waza
+2024-11-18 16:56:35,688 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:59:19,623 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:59:19,877 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 16:59:26,580 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 16:59:26,605 - root - INFO - Bad word detected in body, Request from IP: 127.0.0.1, PATH: /accounts/login/, BODY: csrfmiddlewaretoken=CFRCaC3mW7U7uCASXj0lxQncO6JdTbZlqXle8R2C5zrnN00rQa3fF5vobIbIBlwh&login=admin&password=00023waza, detected: dl
+2024-11-18 16:59:26,605 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:03:08,521 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:03:08,726 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:03:23,462 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:03:24,720 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:04:51,235 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:04:52,552 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:04:56,334 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:04:57,532 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:05:13,477 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:05:14,698 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:06:37,274 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:06:38,551 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:06:51,864 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:06:53,097 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:07:01,575 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:07:02,799 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-18 17:07:02,858 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:07:02,971 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 17:07:02,996 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 17:07:03,074 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 17:07:09,904 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:07:09,953 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 17:07:09,968 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 17:07:10,030 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 17:07:17,328 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:07:17,391 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 17:07:17,412 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 17:07:17,468 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 17:07:24,502 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:07:25,776 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-18 17:07:36,176 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:07:37,651 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-18 17:07:37,665 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:07:37,707 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 17:07:37,722 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 17:07:37,779 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 17:08:09,017 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:08:09,073 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:08:09,166 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:08:09,203 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:08:09,204 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:08:12,515 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:08:12,582 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:08:12,665 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:08:12,694 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:08:12,694 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:08:15,945 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-18 17:08:16,146 - httpx - INFO - HTTP Request: GET http://localhost:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-18 17:08:17,718 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:08:17,777 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:08:17,995 - httpx - INFO - HTTP Request: GET http://localhost:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 101 Switching Protocols"
+2024-11-18 17:08:18,532 - httpx - INFO - HTTP Request: GET http://localhost:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:08:22,821 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:08:22,918 - httpx - INFO - HTTP Request: GET http://localhost:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:08:24,986 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:08:25,041 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:08:25,133 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:08:25,169 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:08:25,170 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:08:32,554 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/97b9c8a5-4789-4b46-8d2f-f48c77bb423b/
+2024-11-18 17:08:32,619 - httpx - INFO - HTTP Request: GET http://localhost:8000/devices/97b9c8a5-4789-4b46-8d2f-f48c77bb423b/ "HTTP/1.1 200 OK"
+2024-11-18 17:08:32,856 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/97b9c8a5-4789-4b46-8d2f-f48c77bb423b
+2024-11-18 17:08:32,934 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:08:33,011 - httpx - INFO - HTTP Request: GET http://localhost:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 101 Switching Protocols"
+2024-11-18 17:08:33,020 - httpx - INFO - HTTP Request: GET http://localhost:8000/api/core/device_logs/97b9c8a5-4789-4b46-8d2f-f48c77bb423b "HTTP/1.1 200 OK"
+2024-11-18 17:09:06,922 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/username=admin' or 1=1
+2024-11-18 17:09:06,946 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /username=admin' or 1=1, BODY: , detected: ' or
+2024-11-18 17:09:06,946 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/username=admin' or 1=1
+2024-11-18 17:11:22,588 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:11:22,768 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:11:22,879 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:11:22,921 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:11:22,921 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:11:23,191 - httpx - INFO - HTTP Request: GET http://localhost:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:11:26,236 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/username=admin' or 1=1
+2024-11-18 17:11:26,257 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /username=admin' or 1=1, BODY: , detected: ' or
+2024-11-18 17:11:26,258 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/username=admin' or 1=1
+2024-11-18 17:11:26,434 - httpx - INFO - HTTP Request: GET http://localhost:8001/username=admin'%20or%201=1 "HTTP/1.1 404 Not Found"
+2024-11-18 17:13:38,656 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:13:38,869 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:13:38,999 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:13:39,042 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:13:39,043 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:13:39,076 - httpx - INFO - HTTP Request: GET http://localhost:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:15:52,469 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:15:52,761 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:15:52,845 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:15:52,879 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:15:52,879 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:15:52,942 - httpx - INFO - HTTP Request: GET http://localhost:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:15:52,994 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/favicon.ico
+2024-11-18 17:15:53,084 - httpx - INFO - HTTP Request: GET http://localhost:8000/favicon.ico "HTTP/1.1 404 Not Found"
+2024-11-18 17:18:46,023 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:20:12,465 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:20:15,873 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:21:24,591 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:22:50,029 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:22:50,603 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:22:50,712 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:22:50,762 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:22:50,764 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:22:50,849 - httpx - INFO - HTTP Request: GET http://localhost:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:24:15,536 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:24:15,822 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 17:24:15,837 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 17:24:15,902 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 17:24:47,694 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-18 17:24:48,906 - httpx - INFO - HTTP Request: POST http://localhost:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-18 17:24:48,921 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:24:48,962 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 302 Found"
+2024-11-18 17:24:48,976 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-18 17:24:49,035 - httpx - INFO - HTTP Request: GET http://localhost:8000/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-18 17:25:06,221 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:25:06,280 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:25:06,356 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:25:06,380 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:25:06,380 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:25:06,513 - httpx - INFO - HTTP Request: GET http://localhost:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:25:12,289 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-18 17:25:12,480 - httpx - INFO - HTTP Request: GET http://localhost:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-18 17:25:12,673 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:25:12,734 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:25:13,086 - httpx - INFO - HTTP Request: GET http://localhost:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 101 Switching Protocols"
+2024-11-18 17:25:13,337 - httpx - INFO - HTTP Request: GET http://localhost:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:25:17,672 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:25:17,900 - httpx - INFO - HTTP Request: GET http://localhost:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:25:20,031 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:25:20,090 - httpx - INFO - HTTP Request: GET http://localhost:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:25:20,153 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:25:20,186 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:25:20,186 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:25:20,295 - httpx - INFO - HTTP Request: GET http://localhost:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:32:13,747 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:32:17,997 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:33:30,671 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-18 17:33:30,801 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-18 17:33:30,974 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:33:31,009 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:33:31,009 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:33:31,077 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:33:34,057 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-18 17:33:34,682 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-18 17:33:34,857 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:33:34,930 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:33:35,001 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 101 Switching Protocols"
+2024-11-18 17:33:35,822 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:33:39,862 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:33:39,954 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:33:44,863 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-18 17:33:44,969 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-18 17:34:00,295 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%27%20or%201==1
+2024-11-18 17:34:00,421 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/?username=admin%27%20or%201%3D%3D1 "HTTP/1.1 200 OK"
+2024-11-18 17:34:00,509 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:34:00,559 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:34:00,560 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:34:00,691 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:34:12,267 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%27%20or%201=1
+2024-11-18 17:34:12,386 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/?username=admin%27%20or%201%3D1 "HTTP/1.1 200 OK"
+2024-11-18 17:34:12,459 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:34:12,503 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /static/img/image-1.jpg, BODY: , detected: img
+2024-11-18 17:34:12,504 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:34:12,541 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/static/img/image-1.jpg "HTTP/1.1 404 Not Found"
+2024-11-18 17:37:19,382 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%20%27%20or%201=1
+2024-11-18 17:37:20,071 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/?username=admin%20%27%20or%201%3D1 "HTTP/1.1 200 OK"
+2024-11-18 17:37:20,237 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-18 17:37:20,372 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/static/img/image-1.jpg "HTTP/1.1 200 OK"
+2024-11-18 17:37:33,582 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/username=admin ' or 1=1
+2024-11-18 17:37:33,766 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/username=admin%20'%20or%201=1 "HTTP/1.1 404 Not Found"
+2024-11-18 17:37:39,295 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%20%27%20or%201=1
+2024-11-18 17:37:39,363 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/?username=admin%20%27%20or%201%3D1 "HTTP/1.1 200 OK"
+2024-11-18 17:37:53,196 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%27%20or%201=1
+2024-11-18 17:37:53,254 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/?username=admin%27%20or%201%3D1 "HTTP/1.1 200 OK"
+2024-11-18 17:37:58,197 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%27%20or%201=1
+2024-11-18 17:37:58,257 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/?username=admin%27%20or%201%3D1 "HTTP/1.1 200 OK"
+2024-11-18 17:38:04,270 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%27%20select
+2024-11-18 17:38:04,304 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /username=admin%27+select, BODY: , detected: select
+2024-11-18 17:38:04,305 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?username=admin%27%20select
+2024-11-18 17:38:05,143 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/?username=admin%27%20select "HTTP/1.1 200 OK"
+2024-11-18 17:38:06,302 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/image/homepage.jpg
+2024-11-18 17:38:06,371 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/static/image/homepage.jpg "HTTP/1.1 404 Not Found"
+2024-11-19 16:40:55,326 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 16:43:18,002 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 16:43:18,347 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 16:43:18,496 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/image/homepage.jpg
+2024-11-19 16:43:18,818 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/static/image/homepage.jpg "HTTP/1.1 200 OK"
+2024-11-19 16:44:41,486 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?Select
+2024-11-19 16:44:41,512 - root - INFO - Bad word detected in path, Request from IP: 127.0.0.1, PATH: /Select, BODY: , detected: select
+2024-11-19 16:44:41,512 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/?Select
+2024-11-19 16:44:42,239 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/?Select= "HTTP/1.1 302 Found"
+2024-11-19 16:44:42,262 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/%3FSelect%3D
+2024-11-19 16:44:42,297 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/%3FSelect%3D
+2024-11-19 16:44:43,399 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/accounts/login/?next=%2F%3FSelect%3D "HTTP/1.1 200 OK"
+2024-11-19 16:44:48,652 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/%3FSelect%3D
+2024-11-19 16:44:48,688 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/%3FSelect%3D
+2024-11-19 16:44:49,000 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/accounts/login/?next=%2F%3FSelect%3D "HTTP/1.1 200 OK"
+2024-11-19 16:44:57,023 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 16:44:57,051 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 16:44:58,393 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8001/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 16:44:58,406 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 16:44:58,437 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 16:44:58,648 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/ "HTTP/1.1 302 Found"
+2024-11-19 16:44:58,664 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-19 16:44:58,691 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-19 16:44:58,924 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/accounts/login/?next=%2F "HTTP/1.1 200 OK"
+2024-11-19 17:08:30,670 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-19 17:08:30,706 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-19 17:08:31,437 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/accounts/login/?next=%2F "HTTP/1.1 404 Not Found"
+2024-11-19 17:08:31,534 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/favicon.ico
+2024-11-19 17:08:31,577 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/favicon.ico
+2024-11-19 17:08:36,438 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login
+2024-11-19 17:08:36,469 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login
+2024-11-19 17:08:36,776 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/accounts/login "HTTP/1.1 404 Not Found"
+2024-11-19 17:08:39,272 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 17:08:39,299 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 17:08:39,617 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/ "HTTP/1.1 200 OK"
+2024-11-19 17:08:41,229 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 17:08:41,259 - root - WARNING - Blocked request from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 17:08:41,568 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8001/ "HTTP/1.1 200 OK"
+2024-11-19 21:56:54,159 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 21:56:54,883 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 21:56:54,911 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 21:57:05,278 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 21:57:06,862 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 21:57:06,981 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 21:57:07,080 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/static/img/image-1.jpg
+2024-11-19 21:57:07,143 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/favicon.ico
+2024-11-19 21:57:11,348 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 21:57:11,686 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 21:57:11,699 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 21:57:11,846 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/favicon.ico
+2024-11-19 21:57:27,567 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 21:57:27,906 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 21:57:27,919 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 21:57:36,570 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 21:57:38,138 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 21:57:38,152 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 21:57:41,552 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 21:57:41,897 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 21:57:41,910 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 21:57:50,348 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 21:57:50,761 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 21:57:50,773 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:00:45,561 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:00:45,929 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:00:45,941 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:00:52,758 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:00:53,242 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:00:58,171 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:00:58,592 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:01:04,495 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:01:04,846 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:02:01,728 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:02:02,130 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:02:07,280 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:02:07,635 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:03:26,210 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:03:26,568 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:03:31,521 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:03:31,925 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:05:47,530 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:05:47,909 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:05:53,658 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:05:54,073 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:06:33,650 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:06:34,008 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:06:43,338 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:06:43,591 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:07:56,491 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:07:56,949 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:08:02,594 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:08:02,972 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:09:04,182 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:09:04,552 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:09:09,452 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:09:09,951 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:10:24,915 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:10:25,277 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:10:30,169 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:10:30,608 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:10:52,753 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:10:53,137 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:11:02,992 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:11:03,676 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:11:08,823 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:11:09,188 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:13:02,510 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:13:03,186 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:13:08,630 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:13:08,970 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:13:47,732 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:13:48,081 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:14:01,244 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:14:01,847 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:14:19,277 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:14:19,633 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:14:26,418 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:14:26,782 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:14:44,497 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:14:45,174 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:14:53,919 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:14:54,276 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:15:14,146 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:15:14,502 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:15:19,889 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:15:20,263 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:18:04,079 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:18:04,544 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:18:09,622 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:18:11,203 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:18:11,218 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:18:14,668 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:18:14,973 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:18:14,983 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:23:46,684 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:23:47,024 - middleware - INFO - Detected Session Cookies: ['sessionid', 'csrftoken']
+2024-11-19 22:23:47,033 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:23:47,042 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:23:47,043 - middleware - ERROR - Proxy request failed: 'Headers' object has no attribute 'getlist'
+2024-11-19 22:23:55,372 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:23:55,730 - middleware - INFO - Detected Session Cookies: ['sessionid', 'csrftoken']
+2024-11-19 22:23:55,742 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:23:55,755 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:23:55,756 - middleware - ERROR - Proxy request failed: 'Headers' object has no attribute 'getlist'
+2024-11-19 22:25:54,594 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:25:54,952 - middleware - INFO - Forwarded Cookies: ['token', 'sessionid', 'csrftoken']
+2024-11-19 22:25:54,961 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:25:54,973 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:25:54,973 - middleware - INFO - Set cookie: csrftoken
+2024-11-19 22:26:00,311 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:26:00,713 - middleware - INFO - Forwarded Cookies: ['token', 'sessionid', 'csrftoken']
+2024-11-19 22:26:01,635 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:26:01,645 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:26:03,906 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/b2c65f6e-5d17-4194-994e-337561473d95/
+2024-11-19 22:26:04,239 - middleware - INFO - Forwarded Cookies: ['token', 'sessionid', 'csrftoken']
+2024-11-19 22:26:04,248 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/b2c65f6e-5d17-4194-994e-337561473d95/ "HTTP/1.1 302 Found"
+2024-11-19 22:26:04,257 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/b2c65f6e-5d17-4194-994e-337561473d95/ "HTTP/1.1 200 OK"
+2024-11-19 22:26:04,258 - middleware - INFO - Set cookie: csrftoken
+2024-11-19 22:26:12,722 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:26:13,127 - middleware - INFO - Forwarded Cookies: ['token', 'sessionid', 'csrftoken']
+2024-11-19 22:26:14,163 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:26:14,163 - middleware - INFO - Set cookie: csrftoken
+2024-11-19 22:26:14,163 - middleware - INFO - Set cookie: sessionid
+2024-11-19 22:26:17,637 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:26:17,974 - middleware - INFO - Forwarded Cookies: ['token', 'sessionid', 'csrftoken']
+2024-11-19 22:26:18,979 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:26:18,980 - middleware - INFO - Set cookie: csrftoken
+2024-11-19 22:26:18,980 - middleware - INFO - Set cookie: sessionid
+2024-11-19 22:26:20,327 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:26:20,666 - middleware - INFO - Forwarded Cookies: ['token', 'sessionid', 'csrftoken']
+2024-11-19 22:26:21,712 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:26:21,713 - middleware - INFO - Set cookie: csrftoken
+2024-11-19 22:26:21,713 - middleware - INFO - Set cookie: sessionid
+2024-11-19 22:28:32,789 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:28:33,441 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:28:39,247 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:28:40,606 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:29:29,222 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:29:29,571 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:29:34,368 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:29:34,731 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-19 22:31:36,925 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:31:37,351 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:31:42,641 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:31:43,868 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:31:43,878 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:31:46,066 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/
+2024-11-19 22:31:46,418 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/ "HTTP/1.1 302 Found"
+2024-11-19 22:31:46,428 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/ "HTTP/1.1 200 OK"
+2024-11-19 22:32:33,870 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:32:35,577 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:32:35,592 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:34:36,748 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:34:37,113 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:35:00,587 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:35:00,957 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:35:09,548 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:35:10,986 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:35:17,758 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:35:19,128 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:35:42,940 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:35:43,565 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:35:43,575 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:35:51,482 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:35:52,719 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:35:52,732 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:36:34,032 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:36:34,405 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:36:41,845 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:36:43,288 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:36:50,698 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:36:52,014 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:36:52,029 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:42:37,696 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:42:38,066 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:42:45,222 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:42:46,514 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:42:46,524 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:42:48,713 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:42:49,058 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:42:49,067 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:43:25,647 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:43:26,001 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:43:26,011 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:43:27,897 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:43:28,264 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:43:28,275 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:43:35,336 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:43:36,640 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:43:36,651 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:43:38,777 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/
+2024-11-19 22:43:39,120 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/ "HTTP/1.1 302 Found"
+2024-11-19 22:43:39,130 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/ "HTTP/1.1 200 OK"
+2024-11-19 22:45:08,042 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:45:09,630 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:45:09,645 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:49:06,573 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:49:07,340 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-19 22:49:09,231 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/
+2024-11-19 22:49:09,589 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/ "HTTP/1.1 302 Found"
+2024-11-19 22:49:09,601 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/e6e54fbf-4b6e-4635-a0ca-1cdbd479cec1/ "HTTP/1.1 200 OK"
+2024-11-19 22:49:22,575 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:49:23,274 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:49:23,284 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:49:28,977 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:49:30,320 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:49:30,334 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:50:11,860 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:50:12,207 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:50:12,218 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:50:51,094 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:50:51,478 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:50:51,489 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:55:37,434 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:55:38,019 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000// "HTTP/1.1 404 Not Found"
+2024-11-19 22:55:54,613 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:55:55,078 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:55:55,090 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:55:57,052 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:55:57,394 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:55:57,404 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:56:13,249 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:56:13,614 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:56:13,625 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-19 22:56:19,882 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-19 22:56:21,192 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-19 22:56:21,204 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-19 22:56:25,296 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-19 22:56:25,637 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-19 22:56:25,650 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-19 22:56:30,047 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-19 22:56:30,406 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-19 22:56:30,419 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"

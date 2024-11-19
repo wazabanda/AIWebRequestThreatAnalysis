@@ -1,16 +1,27 @@
 from django.db import models
 from django.conf import Settings
-from django.utils import timezone
+from django.utils import choices, timezone
 from django.core.exceptions import ValidationError
 
 # Create your models here.
 
 class RequestRedirect(models.Model):
+    name = models.CharField(max_length=32,blank=True)
+    short_description = models.CharField(max_length=64,blank=True)
     source_route = models.CharField(max_length=64)
     good_redirect_route = models.CharField(max_length=255)
     bad_redirect_route = models.CharField(max_length=255)
 
 
+    def __str__(self):
+        return str(self.name)
+
+# class RequestLog(models.Model):
+#     source_ip = models.CharField(max_length=64)
+#     destination = models.ForeignKey(RequestRedirect,on_delete=models.PROTECT)
+#
+#     timestamp = models.DateTimeField(default=timezone.now)
+#
 class SuspicousIP(models.Model):
     source_ip = models.CharField(max_length=64)
     time_identified = models.DateTimeField(default=timezone.now)
@@ -18,16 +29,28 @@ class SuspicousIP(models.Model):
     redirect = models.ForeignKey(to=RequestRedirect,on_delete=models.PROTECT)
 
 
-class RequestSuspicousLog(models.Model):
+    @property
+    def associated_request_logs(self):
+        return RequestLog.objects.filter(sus_ip=self)
+
+    def __str__(self):
+        return self.source_ip
+    
+
+class RequestLog(models.Model):
 
     METHODS = (("GET","GET"),("POST","POST"))
-    suspicous_IP = models.ForeignKey(to=SuspicousIP,on_delete=models.PROTECT)
-    destination_route = models.CharField(max_length=255)
-    body = models.TextField()
+    REQ_TYPE = (("GOOD","GOOD"),("BAD","BAD"))
+    source_ip = models.CharField(max_length=64)
+    sus_ip = models.ForeignKey(to=SuspicousIP,on_delete=models.PROTECT,null=True,blank=True,related_name="request_logs")
+    path = models.CharField(max_length=255,blank=True)
+    body = models.TextField(blank=True)
     headers = models.TextField(blank=True)
-    method = models.CharField(max_length=10,choices=METHODS)
+    method = models.CharField(max_length=10,choices=METHODS,blank=True)
+    request_type = models.CharField(max_length=10,choices=REQ_TYPE,blank=True)
     timestamp = models.DateTimeField(default=timezone.now)
-        
+    redirect = models.ForeignKey(RequestRedirect,on_delete=models.PROTECT,null=True)
+
     def save(self, *args, **kwargs):
         if self.pk:  # If the model instance already exists
             raise ValidationError("This model is read-only and cannot be modified.")

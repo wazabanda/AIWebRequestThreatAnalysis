@@ -1,6 +1,7 @@
 import os
 import django
 
+
 # Set the default Django settings module
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AIWebRequestThreatAnalysis.settings')
 
@@ -15,11 +16,16 @@ import httpx
 import logging
 from fa_imp.sus import bad_words
 from django.conf import settings
+from core.models import *
+from asgiref.sync import sync_to_async
+
+from async_helpers.helpers import *
 # Initialize FastAPI app
 app = FastAPI()
 
 # Destination URL (web application)
 DESTINATION_URL = "http://localhost:8000"  # Modify to your web application's URL
+DESTINATION_URL_BAD = "http://localhost:8001"  # Modify to your web application's URL
 
 # Logging setup
 logging.basicConfig(
@@ -50,7 +56,7 @@ async def analyze_request(request: Request) -> bool:
     query_params = request.query_params
     print(query_params)
     path = request.url.path
-    path +=str(query_params)
+    path += request.url.query
     body = (await request.body()).decode("utf-8") if request.method != "GET" else ""
     
     # Analyze the path and body for symbols and bad words
@@ -76,11 +82,22 @@ async def analyze_request(request: Request) -> bool:
     print(path)
     print(feature_data)
     # Check if the path or body contains any bad words
-    if any(word.lower() in path.lower() for word in bad_words) or \
-       any(word.lower() in body.lower() for word in bad_words):
-        logging.info(f"Bad word detected in path or body")
-        logging.info("Bad word detected in path or body, Request from IP:{origin_ip} to PATH {path}")
-        return False  # Block the request
+    
+    
+    for word in bad_words:
+        # Create a regex pattern with word boundaries
+        pattern = fr'\b{re.escape(word.lower())}\b'
+        
+        # Check the path
+        if re.search(pattern, path.lower()):
+            logging.info(f"Bad word detected in path, Request from IP: {origin_ip}, PATH: {path}, BODY: {body}, detected: {word}")
+            return False  # Block the request
+        
+        # Check the body
+        if re.search(pattern, body.lower()):
+            logging.info(f"Bad word detected in body, Request from IP: {origin_ip}, PATH: {path}, BODY: {body}, detected: {word}")
+            return False  # Block the request
+
 
     # Predict using the trained model
     prediction = model.predict(feature_data)
@@ -137,24 +154,241 @@ def analyze_string(input_string: str, source: str) -> dict:
     
     return features
 
+
+from typing import List, Set
+
+def get_comprehensive_session_cookies() -> Set[str]:
+    """
+    Comprehensive list of session and authentication-related cookies
+    from various web frameworks and technologies
+    """
+    session_cookies = {
+        # Django
+        "sessionid",
+        "csrftoken",
+        "django_language",
+        
+        # Flask
+        "session",
+        "remember_token",
+        
+        # Ruby on Rails
+        "_rails_app_session",
+        "rack.session",
+        
+        # PHP
+        "phpsessid",
+        "php_session",
+        
+        # ASP.NET
+        "aspnet_session",
+        ".aspnetcore_session",
+        "aspnetcore_antiforgery",
+        
+        # Laravel
+        "laravel_session",
+        "laravel_token",
+        
+        # Express.js / Node.js
+        "connect.sid",
+        "express_session",
+        "node_session",
+        
+        # Java / Spring
+        "jsessionid",
+        "spring_session",
+        
+        # Authentication Tokens
+        "auth_token",
+        "access_token",
+        "refresh_token",
+        
+        # OAuth and SSO
+        "oauth_token",
+        "sso_token",
+        
+        # Authentication Providers
+        "google_auth",
+        "github_auth",
+        "azure_auth",
+        
+        # Security and Identity
+        "remember_me",
+        "auth_session",
+        "identity",
+        
+        # Specific Frameworks
+        "symfony_session",
+        "codeigniter_session",
+        
+        # Cloud and Distributed Systems
+        "aws_session",
+        "azure_session",
+        
+        # Misc Web Frameworks
+        "sails_session",
+        "meteor_session",
+        
+        # General Authentication
+        "user_session",
+        "login_token",
+        "auth_cookie",
+        
+        # Browser-based Authentication
+        "user_id",
+        "logged_in",
+        
+        # Specific Use Cases
+        "admin_session",
+        "api_session",
+        
+        # Potential CSRF and Security Tokens
+        "xsrf-token",
+        "x-csrf-token",
+        "csrf-token",
+        
+        # Tracking and Analytics (sometimes used for session-like purposes)
+        "_ga",
+        "_gid",
+        
+        # Custom and Potential Variants
+        *[f"{prefix}_session" for prefix in ["custom", "app", "web", "site"]],
+        *[f"{prefix}_token" for prefix in ["auth", "access", "user", "app"]]
+    }
+    
+    # Convert to lowercase to ensure case-insensitive matching
+    return {cookie.lower() for cookie in session_cookies}
+
+
+import httpx
+
+from fastapi.responses import Response
+
+async def proxy_request(request: Request, rde):
+    """
+    Proxy request with proper cookie handling
+    """
+    remote_django_url = "http://127.0.0.1:8000"  # Replace with your Django server URL
+    
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        # Build the proxied request
+        forward_request = client.build_request(
+            method=request.method,
+            url=f"{rde}{request.url.path}",
+            headers={
+                key: value for key, value in request.headers.items() if key.lower() != "host"
+            },
+            cookies=request.cookies,  # Forward incoming cookies
+            content=await request.body()  # Include the request body
+        )
+        
+        # Send the request to Django
+        response = await client.send(forward_request)
+        
+        # Build the response for the client
+        fastapi_response = Response(
+            content=response.content,
+            status_code=response.status_code,
+            headers={
+                k: v for k, v in response.headers.items()
+                if k.lower() != "set-cookie"  # Exclude Django's Set-Cookie headers
+            }
+        )
+        
+        # Forward all Set-Cookie headers to the client
+        for cookie in response.cookies.jar:
+            fastapi_response.set_cookie(
+                key=cookie.name,
+                value=cookie.value,
+                domain=cookie.domain,
+                path=cookie.path,
+                secure=cookie.secure,
+                samesite=cookie._rest.get("samesite", "Lax")  # Use 'Lax' as the default
+            )
+        
+        return fastapi_response
+
 # Middleware to process requests
 @app.middleware("http")
 async def threat_detection_middleware(request: Request, call_next):
-
+#
     origin_ip = get_client_ip(request)
     logging.info(f"Request received from IP: {origin_ip} to PATH: {request.url}")
-    # Analyze the incoming request
-    if not await analyze_request(request):
-        # Block request if a threat is detected
-        logging.warning(f"Blocked request from IP: {origin_ip} to PATH: {request.url}")
-        return Response("Request blocked due to security threat", status_code=403)
 
+    host = request.headers.get('host')
+    print(host)
+    req_redirect = await sync_to_async(
+    lambda: RequestRedirect.objects.filter(source_route=host).first())()
+
+    suspicious_ip = await get_suspicious_ip_async(origin_ip,req_redirect)
+    suspicious_ip_exp = await is_time_expired_async(origin_ip)
+    sus = False
+    sus_ip = None
+    # Analyze the incoming request
+    rde = req_redirect.good_redirect_route
+    if not await analyze_request(request) or suspicious_ip:
+        # Block request if a threat is detected 
+        logging.warning(f"Blocked request from IP: {origin_ip} to PATH: {request.url}")
+        # return Response("Request blocked due to security threat", status_code=403)
+        if suspicious_ip:
+            await update_time_identified_async(origin_ip)
+        else:
+            await create_suspicious_ip_async(origin_ip,req_redirect)
+        sus = True
+        rde = req_redirect.bad_redirect_route
+        sus_ip = await fetch_suspicious_ip_async(origin_ip,req_redirect)
+    
+    if not suspicious_ip and suspicious_ip_exp and sus==False:
+        await update_time_allowed_async(origin_ip)
+    
+    await create_request_log(origin_ip,req_redirect,request,sus,sus_ip)
     # Forward the request if it's safe
-    async with httpx.AsyncClient() as client:
+    
+    return await proxy_request(request,rde)
+
+
+    csrf_token = request.headers.get("x-csrftoken") or request.cookies.get("csrftoken")
+
+
+
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        # Forward all headers, except the 'Host' header
+        forwarded_headers = {key: value for key, value in request.headers.items() if key.lower() != ""}
+        if csrf_token:
+            forwarded_headers["x-csrftoken"] = csrf_token
+            print(csrf_token)# Add CSRF token to headers
+
+        # Add Referer header if missing
+        if "referer" not in forwarded_headers:
+            forwarded_headers["referer"] = str(request.url)
+
+        # Build the proxied request
+        forward_request = client.build_request(
+            method=request.method,
+            url=f"{rde}{request.url.path}",
+            headers=forwarded_headers,
+            params=request.query_params,
+            content=await request.body(),
+            cookies=request.cookies  # Forward client cookies (including csrftoken)
+        )
+
+        # Send the request to Django
+        response = await client.send(forward_request)
+
+        # Return the response to the client
+        return Response(
+            content=response.content,
+            status_code=response.status_code,
+            headers=dict(response.headers)  # Forward Django's response headers
+        )
+
+
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        forwarded_headers = {key: value for key, value in request.headers.items() if key.lower() != 'host'}
         forward_request = client.build_request(
             request.method, 
-            f"{DESTINATION_URL}{request.url.path}", 
-            headers=request.headers, 
+            f"{rde}{request.url.path}", 
+            headers=forwarded_headers,#request.headers, 
             params=request.query_params, 
             content=await request.body()
         )
