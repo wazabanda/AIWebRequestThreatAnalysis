@@ -791,3 +791,197 @@ NameError: name 'urljoin' is not defined
 2024-11-19 22:56:30,047 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
 2024-11-19 22:56:30,406 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
 2024-11-19 22:56:30,419 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:00:00,711 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-20 06:00:01,289 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:00:02,271 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:00:06,518 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:00:08,069 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:00:12,493 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:00:13,869 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:00:13,937 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-20 06:01:20,210 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:01:22,871 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:02:29,211 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:02:29,652 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:02:35,582 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:02:36,993 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:02:49,950 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:02:51,123 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:02:51,138 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-20 06:03:52,697 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:03:53,059 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:04:19,582 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:04:19,941 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:07:10,114 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:07:59,351 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:09:28,667 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:09:54,643 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:10:24,037 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:10:54,917 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:11:52,021 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:11:52,421 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:12:08,476 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:12:09,746 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:12:09,759 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-20 06:12:19,507 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-20 06:12:19,970 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-20 06:12:19,984 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-20 06:13:06,054 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-20 06:13:06,702 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 302 Found"
+2024-11-20 06:13:06,713 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-20 06:13:11,242 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-20 06:13:11,602 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:13:11,616 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:13:21,213 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:13:22,533 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:13:22,546 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-20 06:18:36,681 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:18:37,424 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:18:43,997 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:18:45,342 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:22:00,888 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:22:01,623 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:22:08,678 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:22:09,985 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:22:09,990 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:22:10,001 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:28:44,769 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:28:45,628 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:28:55,557 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:28:57,167 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:28:57,175 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:28:57,189 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:30:04,300 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:30:05,884 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:30:05,900 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:30:05,912 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:30:20,250 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:30:21,880 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:30:21,900 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:30:21,936 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:30:46,886 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:30:47,260 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:30:55,446 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:30:56,949 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:30:56,970 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:30:57,005 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:30:59,609 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:31:01,216 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:32:40,595 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:32:42,465 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:32:42,472 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:32:42,496 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:44:20,806 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:44:30,255 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:44:48,691 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:44:50,227 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:44:58,428 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:44:59,766 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:44:59,783 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:44:59,800 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:48:08,440 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:48:08,806 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:48:43,437 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:48:43,884 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:49:01,428 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:49:01,826 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 403 Forbidden"
+2024-11-20 06:50:26,662 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:50:27,040 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:50:32,894 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:50:34,194 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:52:45,502 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:52:46,221 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 06:52:46,419 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/favicon.ico
+2024-11-20 06:52:47,031 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/favicon.ico "HTTP/1.1 404 Not Found"
+2024-11-20 06:52:51,825 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:52:53,107 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:52:53,119 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:52:53,138 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-20 06:52:53,451 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:53:05,487 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 06:53:06,747 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 06:53:06,759 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 06:53:06,776 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-20 06:53:07,033 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 06:55:09,650 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-20 06:55:09,986 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/?next=/
+2024-11-20 06:55:09,986 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': '', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK'}
+2024-11-20 06:55:09,986 - root - INFO - With headers: {'host': '127.0.0.1:8010', 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'accept-language': 'en-US,en;q=0.5', 'accept-encoding': 'gzip, deflate, br, zstd', 'cookie': 'twk_uuid_61010050649e0a0a5cce48df=%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D; messages=""; jazzy_menu=open; TawkConnectionTime=0; twk_idm_key=yo2QLsZ_eYcxxjJKPApjf; token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4; csrftoken=I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK', 'upgrade-insecure-requests': '1', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'none', 'sec-fetch-user': '?1', 'priority': 'u=0, i'}
+2024-11-20 06:55:10,019 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 07:00:16,556 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-20 07:00:17,320 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/?next=/
+2024-11-20 07:00:17,320 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': '', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK'}
+2024-11-20 07:00:17,335 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 07:00:51,609 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-20 07:00:51,958 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/?next=/
+2024-11-20 07:00:51,958 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': '', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK'}
+2024-11-20 07:00:51,971 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 200 OK"
+2024-11-20 07:00:51,972 - root - INFO - Response status: 200
+2024-11-20 07:00:51,972 - root - INFO - Response cookies: {'csrftoken': <Morsel: csrftoken=I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK; expires=Wed, 19 Nov 2025 07:00:51 GMT; Max-Age=31449600; Path=/; SameSite=Lax>}
+2024-11-20 07:00:58,254 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 07:00:58,720 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/
+2024-11-20 07:00:58,721 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': '', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK'}
+2024-11-20 07:00:59,744 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 07:00:59,762 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 07:04:24,494 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 07:04:25,134 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/
+2024-11-20 07:04:25,135 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': '', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK'}
+2024-11-20 07:04:25,150 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 200 OK"
+2024-11-20 07:04:25,152 - root - INFO - Response status: 200
+2024-11-20 07:04:25,152 - root - INFO - Response cookies: {'csrftoken': <Morsel: csrftoken=I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK; expires=Wed, 19 Nov 2025 07:04:25 GMT; Max-Age=31449600; Path=/; SameSite=Lax>}
+2024-11-20 07:04:32,029 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/
+2024-11-20 07:04:32,413 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/
+2024-11-20 07:04:32,414 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': '', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'I5gwQwKnuLcUCkuz7i7xhrliKTNUk8IK'}
+2024-11-20 07:04:33,539 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/accounts/login/ "HTTP/1.1 302 Found"
+2024-11-20 07:04:33,549 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2024-11-20 07:04:33,550 - root - INFO - Response status: 302
+2024-11-20 07:04:33,550 - root - INFO - Response cookies: {'messages': <Morsel: messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk; HttpOnly; Path=/; SameSite=Lax>, 'csrftoken': <Morsel: csrftoken=qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL; expires=Wed, 19 Nov 2025 07:04:33 GMT; Max-Age=31449600; Path=/; SameSite=Lax>, 'sessionid': <Morsel: sessionid=odvq62yuntbvuxntobhf120bvrtcu7iy; HttpOnly; Path=/; SameSite=Lax>}
+2024-11-20 07:04:33,574 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/accounts/login/?next=/
+2024-11-20 07:04:33,848 - root - INFO - Proxying request to: http://127.0.0.1:8000/accounts/login/?next=/
+2024-11-20 07:04:33,848 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:33,877 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/accounts/login/?next=/ "HTTP/1.1 302 Found"
+2024-11-20 07:04:33,987 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-20 07:04:33,989 - root - INFO - Response status: 200
+2024-11-20 07:04:33,990 - root - INFO - Response cookies: {}
+2024-11-20 07:04:47,959 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-20 07:04:48,243 - root - INFO - Proxying request to: http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/
+2024-11-20 07:04:48,243 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:48,499 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/302782f5-f1f9-4986-a7ce-b3313b38740d/ "HTTP/1.1 200 OK"
+2024-11-20 07:04:48,500 - root - INFO - Response status: 200
+2024-11-20 07:04:48,500 - root - INFO - Response cookies: {}
+2024-11-20 07:04:48,710 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-20 07:04:48,714 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-20 07:04:49,065 - root - INFO - Proxying request to: http://127.0.0.1:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-20 07:04:49,066 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:49,077 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 400 HTTP Connection headers do not include "upgrade" value (case-insensitive): "keep-alive""
+2024-11-20 07:04:49,079 - root - INFO - Response status: 400
+2024-11-20 07:04:49,080 - root - INFO - Response cookies: {}
+2024-11-20 07:04:49,407 - root - INFO - Proxying request to: http://127.0.0.1:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-20 07:04:49,407 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:49,598 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/core/device_logs/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 200 OK"
+2024-11-20 07:04:49,599 - root - INFO - Response status: 200
+2024-11-20 07:04:49,599 - root - INFO - Response cookies: {}
+2024-11-20 07:04:52,146 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/
+2024-11-20 07:04:52,607 - root - INFO - Proxying request to: http://127.0.0.1:8000/
+2024-11-20 07:04:52,607 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:52,627 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 200 OK"
+2024-11-20 07:04:52,627 - root - INFO - Response status: 200
+2024-11-20 07:04:52,627 - root - INFO - Response cookies: {}
+2024-11-20 07:04:54,196 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/devices/2be825db-080d-49db-a84f-1e03e884085c/
+2024-11-20 07:04:54,484 - root - INFO - Proxying request to: http://127.0.0.1:8000/devices/2be825db-080d-49db-a84f-1e03e884085c/
+2024-11-20 07:04:54,484 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:54,508 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/devices/2be825db-080d-49db-a84f-1e03e884085c/ "HTTP/1.1 200 OK"
+2024-11-20 07:04:54,508 - root - INFO - Response status: 200
+2024-11-20 07:04:54,508 - root - INFO - Response cookies: {}
+2024-11-20 07:04:54,721 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-20 07:04:54,809 - root - INFO - Request received from IP: 127.0.0.1 to PATH: http://127.0.0.1:8010/api/core/device_logs/2be825db-080d-49db-a84f-1e03e884085c
+2024-11-20 07:04:55,051 - root - INFO - Proxying request to: http://127.0.0.1:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d
+2024-11-20 07:04:55,051 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:55,095 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ws/devices/302782f5-f1f9-4986-a7ce-b3313b38740d "HTTP/1.1 400 HTTP Connection headers do not include "upgrade" value (case-insensitive): "keep-alive""
+2024-11-20 07:04:55,097 - root - INFO - Response status: 400
+2024-11-20 07:04:55,097 - root - INFO - Response cookies: {}
+2024-11-20 07:04:55,300 - root - INFO - Proxying request to: http://127.0.0.1:8000/api/core/device_logs/2be825db-080d-49db-a84f-1e03e884085c
+2024-11-20 07:04:55,300 - root - INFO - With cookies: {'twk_uuid_61010050649e0a0a5cce48df': '%7B%22uuid%22%3A%221.PUqoqIsoy1uu6OPXqV5C2pj3bfh1ITV79cWVeEk6UdMOsUSf6MddPWdoiC98F8JHCbxzyhOgOyrIDyPrxczMmiagtmgvMbWHJRnhPudeR2v0u5w42%22%2C%22version%22%3A3%2C%22domain%22%3A%22127.0.0.1%22%2C%22ts%22%3A1729250538982%7D', 'messages': 'W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBzaWduZWQgaW4gYXMgYWRtaW4uIiwiIl1d:1tDelN:_1C9ohHftssboy6gMrK8cuHsHPuYXGKhQx7UlA7DUZk', 'jazzy_menu': 'open', 'TawkConnectionTime': '0', 'twk_idm_key': 'yo2QLsZ_eYcxxjJKPApjf', 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmU4MDc0LTBiNmYtNDkyZS05NTlmLTFhN2Q3MDYxN2E0NiJ9.QI-J_ndQmJfEJ7eUnWXQjzSljvjbEbtb7aqXUH-AUI4', 'csrftoken': 'qwNgAx7r0PdcPjyKk2Tswd1R3xWB1wiL', 'sessionid': 'odvq62yuntbvuxntobhf120bvrtcu7iy'}
+2024-11-20 07:04:55,312 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/core/device_logs/2be825db-080d-49db-a84f-1e03e884085c "HTTP/1.1 200 OK"
+2024-11-20 07:04:55,312 - root - INFO - Response status: 200
+2024-11-20 07:04:55,313 - root - INFO - Response cookies: {}

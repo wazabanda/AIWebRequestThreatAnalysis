@@ -259,55 +259,151 @@ def get_comprehensive_session_cookies() -> Set[str]:
     # Convert to lowercase to ensure case-insensitive matching
     return {cookie.lower() for cookie in session_cookies}
 
-
+from fastapi import Request, Response
 import httpx
+from urllib.parse import urljoin, urlparse
+import logging
+from http.cookies import SimpleCookie
 
-from fastapi.responses import Response
-
-async def proxy_request(request: Request, rde):
+async def proxy_request(request: Request, rde: str, req) -> Response:
     """
-    Proxy request with proper cookie handling
+    Proxy request with fixed cookie handling
     """
-    remote_django_url = "http://127.0.0.1:8000"  # Replace with your Django server URL
-    
-    async with httpx.AsyncClient(follow_redirects=True) as client:
-        # Build the proxied request
-        forward_request = client.build_request(
-            method=request.method,
-            url=f"{rde}{request.url.path}",
-            headers={
-                key: value for key, value in request.headers.items() if key.lower() != "host"
-            },
-            cookies=request.cookies,  # Forward incoming cookies
-            content=await request.body()  # Include the request body
-        )
+    async with httpx.AsyncClient(follow_redirects=False) as client:
+        # Get full path
+        full_path = request.url.path
+        if request.url.query:
+            full_path = f"{full_path}?{request.url.query}"
+            
+        target_url = urljoin(rde, full_path)
         
-        # Send the request to Django
-        response = await client.send(forward_request)
+        # Prepare headers
+        headers = dict(request.headers)
+        headers['host'] = req.source_route
+        headers.pop('connection', None)
+        headers.pop('transfer-encoding', None)
         
-        # Build the response for the client
-        fastapi_response = Response(
-            content=response.content,
-            status_code=response.status_code,
-            headers={
-                k: v for k, v in response.headers.items()
-                if k.lower() != "set-cookie"  # Exclude Django's Set-Cookie headers
-            }
-        )
-        
-        # Forward all Set-Cookie headers to the client
-        for cookie in response.cookies.jar:
-            fastapi_response.set_cookie(
-                key=cookie.name,
-                value=cookie.value,
-                domain=cookie.domain,
-                path=cookie.path,
-                secure=cookie.secure,
-                samesite=cookie._rest.get("samesite", "Lax")  # Use 'Lax' as the default
+        # Fix origin and referer
+        if 'origin' in headers:
+            headers['origin'] = rde
+        if 'referer' in headers:
+            headers['referer'] = headers['referer'].replace(
+                str(request.base_url).rstrip('/'), 
+                rde.rstrip('/')
             )
         
-        return fastapi_response
+        # Handle request body
+        body = None
+        if request.method in ["POST", "PUT", "PATCH"]:
+            body = await request.body()
+            if not body and 'content-length' in headers:
+                body = b''
+            headers['content-length'] = str(len(body) if body else 0)
+            
+        logging.info(f"Proxying request to: {target_url}")
+        logging.info(f"With cookies: {request.cookies}")
+        
+        try:
+            response = await client.request(
+                method=request.method,
+                url=target_url,
+                headers=headers,
+                cookies=request.cookies,
+                content=body,
+                follow_redirects=False
+            )
+            
+            # Store initial response cookies
+            response_cookies = SimpleCookie()
+            if 'set-cookie' in response.headers:
+                for cookie_str in response.headers.get_list('set-cookie'):
+                    response_cookies.load(cookie_str)
+            
+            # Handle redirects
+            if response.status_code in (301, 302, 303, 307, 308):
+                redirect_url = response.headers.get('location')
+                if redirect_url:
+                    if not redirect_url.startswith(('http://', 'https://')):
+                        redirect_url = urljoin(rde, redirect_url)
+                    
+                    # Update cookies for redirect
+                    redirect_cookies = dict(request.cookies)
+                    for key, morsel in response_cookies.items():
+                        redirect_cookies[key] = morsel.value
+                    
+                    # Determine redirect method and body
+                    if response.status_code in (307, 308):
+                        redirect_method = request.method
+                        redirect_body = body
+                    else:
+                        redirect_method = "GET"
+                        redirect_body = None
+                        headers['content-length'] = '0'
+                    
+                    response = await client.request(
+                        method=redirect_method,
+                        url=redirect_url,
+                        headers=headers,
+                        cookies=redirect_cookies,
+                        content=redirect_body,
+                        follow_redirects=False
+                    )
+                    
+                    # Merge cookies from redirect response
+                    if 'set-cookie' in response.headers:
+                        for cookie_str in response.headers.getlist('set-cookie'):
+                            response_cookies.load(cookie_str)
+            
+            # Prepare response
+            response_headers = {
+                k: v for k, v in response.headers.items()
+                if k.lower() not in {'transfer-encoding', 'connection', 'keep-alive', 'set-cookie'}
+            }
+            
+            fastapi_response = Response(
+                content=response.content,
+                status_code=response.status_code,
+                headers=response_headers
+            )
+            
+            # Set cookies from the final response
+            for key, morsel in response_cookies.items():
+                cookie_attrs = {
+                    'key': key,
+                    'value': morsel.value,
+                    'path': morsel['path'] if 'path' in morsel else "/",
+                    'httponly': bool(morsel['httponly']) if 'httponly' in morsel else True,
+                    'samesite': morsel['samesite'] if 'samesite' in morsel else 'Lax'
+                }
+                
+                # Add optional attributes
+                if 'domain' in morsel:
+                    cookie_attrs['domain'] = morsel['domain']
+                if 'expires' in morsel:
+                    cookie_attrs['expires'] = morsel['expires']
+                
+                if morsel.get('max-age') and morsel['max-age'].isdigit():
+                    cookie_attrs['max_age'] = int(morsel['max-age'])
+                else:
+                    # Handle cases where 'max-age' is missing or invalid
+                    cookie_attrs['max_age'] = None  # or set a default value if applicable
 
+                if 'secure' in morsel:
+                    cookie_attrs['secure'] = bool(morsel['secure'])
+                
+                fastapi_response.set_cookie(**cookie_attrs)
+                
+            logging.info(f"Response status: {response.status_code}")
+            logging.info(f"Response cookies: {dict(response_cookies)}")
+            
+            return fastapi_response
+            
+        except httpx.RequestError as exc:
+            logging.error(f"Proxy request failed: {exc}", exc_info=True)
+            return Response(
+                content=str(exc),
+                status_code=500
+            )
 # Middleware to process requests
 @app.middleware("http")
 async def threat_detection_middleware(request: Request, call_next):
@@ -344,7 +440,7 @@ async def threat_detection_middleware(request: Request, call_next):
     await create_request_log(origin_ip,req_redirect,request,sus,sus_ip)
     # Forward the request if it's safe
     
-    return await proxy_request(request,rde)
+    return await proxy_request(request,rde,req_redirect)
 
 
     csrf_token = request.headers.get("x-csrftoken") or request.cookies.get("csrftoken")
