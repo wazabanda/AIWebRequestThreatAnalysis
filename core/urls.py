@@ -17,11 +17,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import DashView,BaseView,RouteDashboard,SuspicousIpView
+from .views import DashView,BaseView,RouteDashboard,SuspicousIpView, get_request_logs
 urlpatterns = [
     path('/dash', DashView.as_view(),name="home"),
     path('', BaseView.as_view(),name="base"),
     path("/dash/<int:id>",RouteDashboard.as_view(),name="dashboard"),
     path("/suspicous/<int:id>",SuspicousIpView.as_view(),name="suspicous"),
     path('accounts/', include('allauth.urls')),
+       path("api/get-request-logs/<int:id>", get_request_logs, name="get_request_logs"),
 ]

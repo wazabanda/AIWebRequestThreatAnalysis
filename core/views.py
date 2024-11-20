@@ -2,7 +2,33 @@ from django.shortcuts import redirect, render
 from django.views.generic import TemplateView,View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
+from django.http import JsonResponse
+from django.utils.dateparse import parse_datetime
 # Create your views here.
+
+
+def get_request_logs(request,id):
+    suspicous_ip = SuspicousIP.objects.get(id=id)
+    start_date = parse_datetime(request.GET.get('start_date'))
+    end_date = parse_datetime(request.GET.get('end_date'))
+
+    if not start_date or not end_date:
+        return JsonResponse({"error": "Invalid date range"}, status=400)
+
+    logs = RequestLog.objects.filter(timestamp__range=(start_date, end_date),source_ip=suspicous_ip.source_ip).order_by('timestamp')
+    data = [
+        {
+            "id": log.id,
+            "source_ip": log.source_ip,
+            "path": log.path,
+            "timestamp": log.timestamp.isoformat(),
+            "method": log.method,
+            "request_type": log.request_type,
+            "response_status_code": log.response_status_code,
+        }
+        for log in logs
+    ]
+    return JsonResponse({"logs": data})
 
 
 class BaseView(LoginRequiredMixin,TemplateView):

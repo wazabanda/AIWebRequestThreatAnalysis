@@ -143,6 +143,17 @@
         </div>
     </div>
 
+    <div class="flex flex-col items-center space-y-4 p-6">
+        <div class="flex items-center space-x-2">
+          <input id="start_date" type="datetime-local" class="border rounded p-2">
+          <input id="end_date" type="datetime-local" class="border rounded p-2">
+          <button id="load_timeline" onclick="load_t()" class="bg-blue-500 text-white rounded px-4 py-2">Load Timeline</button>
+        </div>
+        <div id="mermaid_diagram" class="w-full p-4 border rounded bg-white"></div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+      
+
     <!-- Request History -->
     <div class="bg-white rounded-xl shadow-lg">
         <div class="p-6 border-b border-gray-100">
@@ -305,3 +316,65 @@
 
 
         {%endfor%}
+
+
+        
+<script>
+    const susId = "{{ sus.id }}";  // Rendered by Django
+    function load_t() {
+        const startDate = document.getElementById("start_date").value;
+        const endDate = document.getElementById("end_date").value;
+      
+        if (!startDate || !endDate) {
+          alert("Please select both start and end dates.");
+          return;
+        }
+      
+        const susId = "{{ sus.id }}"; // Ensure this is rendered properly by Django
+        const url = `/api/get-request-logs/${susId}?start_date=${startDate}&end_date=${endDate}`;
+      
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+      
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) { // Request is complete
+            if (xhr.status === 200) {
+              const data = JSON.parse(xhr.responseText);
+      
+              if (data.logs.length === 0) {
+                document.getElementById("mermaid_diagram").textContent = "No data available for the selected range.";
+                return;
+              }
+      
+              const timelineData = data.logs
+                .map(
+                  (log) =>
+                    `    ${log.timestamp} : ${log.method} ${log.path} [${log.request_type}] (${log.source_ip}, ${log.response_status_code})`
+                )
+                .join("\n");
+      
+              const mermaidCode = `
+                timeline
+                  title Request Timeline
+                  ${timelineData}
+              `;
+      
+              const diagramContainer = document.getElementById("mermaid_diagram");
+              diagramContainer.textContent = mermaidCode;
+              mermaid.init(undefined, diagramContainer);
+            } else {
+              console.error("Failed to fetch request logs:", xhr.statusText);
+              alert("An error occurred while fetching request logs.");
+            }
+          }
+        };
+      
+        xhr.onerror = function () {
+          console.error("Network error occurred.");
+          alert("A network error occurred.");
+        };
+      
+        xhr.send();
+      }
+      
+  </script>
