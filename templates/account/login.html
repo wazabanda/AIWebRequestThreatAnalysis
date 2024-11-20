@@ -1,0 +1,131 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load static %}
+{% load allauth account %}
+{% block head_title %}
+{% trans "Sign In" %}
+{% endblock head_title %}
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center px-4 py-8">
+    <div class="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden">
+        <div class="p-8">
+            <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-6">{% trans "Sign In" %}</h1>
+            
+            {% if not SOCIALACCOUNT_ONLY %}
+            {% setvar link %}
+            <a href="{{ signup_url }}" class="text-blue-600 hover:text-blue-800 hover:underline font-semibold">
+            {% endsetvar %}
+            {% setvar end_link %}
+            </a>
+            {% endsetvar %}
+            
+            <p class="text-center text-gray-600 mb-6">
+            {% blocktranslate %}Don't have an account? {{ link }}Sign up{{ end_link }} now.{% endblocktranslate %}
+            </p>
+            
+            <form method="post" action="{% url 'account_login' %}" class="space-y-6">
+                {% csrf_token %}
+                <div>
+                    <label for="username" class="block mb-2 text-sm font-medium text-gray-700">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="login" 
+                        value="{{ form.login.value }}" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300 
+                               {% if form.login.errors %}border-red-500{% endif %}"
+                        placeholder="Enter your username" 
+                        required 
+                    />
+                    {% if form.login.errors %}
+                    <div class="text-red-500 text-sm mt-1 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        {{ form.login.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        value="{{ form.password.value }}" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300
+                               {% if form.password.errors %}border-red-500{% endif %}"
+                        placeholder="Enter your password" 
+                        required 
+                    />
+                    {% if form.password.errors %}
+                    <div class="text-red-500 text-sm mt-1 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        {{ form.password.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input 
+                            id="remember" 
+                            name="remember" 
+                            type="checkbox" 
+                            value="true" 
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" 
+                            {% if form.remember.value %}checked{% endif %} 
+                        />
+                        <label for="remember" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+                    <div>
+                        <a href="{% url 'account_reset_password' %}" class="text-sm text-blue-600 hover:text-blue-800 hover:underline">
+                            Forgot password?
+                        </a>
+                    </div>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                    Sign In
+                </button>
+            </form>
+            {% endif %}
+            
+            {% if LOGIN_BY_CODE_ENABLED %}
+            <div class="mt-6 text-center">
+                <div class="flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
+                    <p class="mx-4 mb-0 text-center font-semibold text-gray-600">OR</p>
+                </div>
+                
+                <button 
+                    onclick="location.href='{{ request_login_code_url }}'" 
+                    class="mt-4 w-full text-blue-600 border-2 border-blue-600 py-3 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
+                >
+                    {% trans "Mail me a sign-in code" %}
+                </button>
+            </div>
+            {% endif %}
+            
+            {% if SOCIALACCOUNT_ENABLED %}
+            <div class="mt-6">
+                {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    Flowbit.initialize();
+});
+</script>
+{% endblock content %}

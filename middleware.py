@@ -18,7 +18,7 @@ from fa_imp.sus import bad_words
 from django.conf import settings
 from core.models import *
 from asgiref.sync import sync_to_async
-
+import urllib.parse
 from async_helpers.helpers import *
 # Initialize FastAPI app
 app = FastAPI()
@@ -72,6 +72,79 @@ def parse_form_data(body: bytes | str) -> dict:
         return {}
 
 
+def check_for_bad_words(path, body, origin_ip, bad_words, logging_function=logging.info):
+    """
+    Check path and body for potentially malicious words
+    
+    :param path: URL path to check
+    :param body: Request body to check
+    :param origin_ip: IP address of the request
+    :param bad_words: List of dangerous words to check against
+    :param logging_function: Logging function to use (default: logging.info)
+    :return: Boolean indicating if request is safe
+    """
+    try:
+        # Decode URL path
+        decoded_path = urllib.parse.unquote(path).lower()
+        decoded_body = urllib.parse.unquote(body).lower() if body else ''
+
+        # Prepare detection results
+        detected_words = {
+            'path': [],
+            'body': []
+        }
+        decoded_body = decoded_body.replace("+"," ").replace("&"," ")
+        print("-"*10)
+        print(decoded_body)
+        print("-"*10)
+        # Compile regex patterns for performance
+        for word in bad_words:
+            # Create a precise regex pattern with word boundaries
+            pattern = fr'(?<=[\s%20=]){re.escape(word.lower())}(?=[\s%20=]|$)'
+            
+            # Check path
+            path_matches = re.findall(pattern, decoded_path)
+            if path_matches:
+                detected_words['path'].extend(path_matches)
+
+            # Check body
+            body_matches = re.findall(pattern, decoded_body)
+            if body_matches:
+                detected_words['body'].extend(body_matches)
+
+        # If any bad words are detected
+        if detected_words['path'] or detected_words['body']:
+            # Detailed logging
+            log_message = (
+                f"Potential injection detected "
+                f"IP: {origin_ip} "
+                f"Path: {path} "
+                f"Body: {body} "
+                f"Detected in path: {detected_words['path']} "
+                f"Detected in body: {detected_words['body']}"
+            )
+            logging_function(log_message)
+            
+            return False  # Block the request
+
+        return True  # Request is safe
+
+    except Exception as e:
+        # Log any unexpected errors
+        logging.error(f"Error in bad word check: {e}")
+        return False  # Default to blocking in case of error
+
+# Example usage
+def validate_request(path, body, origin_ip):
+    bad_words = [
+        "select", "from", "where", "insert", "into", "values", 
+        "' or", "or 1=1", "user()", # your list of bad words
+    ]
+    
+    is_safe = check_for_bad_words(path, body, origin_ip, bad_words)
+    return is_safe
+
+
 # Function to analyze and detect threats in request data
 async def analyze_request(request: Request) -> bool:
     # Extract data from request
@@ -100,28 +173,30 @@ async def analyze_request(request: Request) -> bool:
     # Create a DataFrame for the input features
     feature_data = pd.DataFrame([combined_features], columns=feature_columns)
     feature_data.fillna(0,inplace=True)
-    print("body")
-    print((await request.body()))
     print("path")
-    print(path)
-    print(feature_data)
+    path = urllib.parse.unquote(path)
+    print(path.lower())
     # Check if the path or body contains any bad words
     
-    
-    for word in bad_words:
-        # Create a regex pattern with word boundaries
-        pattern = fr'\b{re.escape(word.lower())}\b'
-        
-        # Check the path
-        if re.search(pattern, path.lower()):
-            logging.info(f"Bad word detected in path, Request from IP: {origin_ip}, PATH: {path}, BODY: {body}, detected: {word}")
-            return False  # Block the request
-        
-        # Check the body
-        if re.search(pattern, body.lower()):
-            logging.info(f"Bad word detected in body, Request from IP: {origin_ip}, PATH: {path}, BODY: {body}, detected: {word}")
-            return False  # Block the request
-
+    is_bad = check_for_bad_words(path,body,origin_ip,bad_words)
+    if is_bad == False:
+        return is_bad
+    # for word in bad_words:
+    #     # Create a regex pattern with word boundaries
+    #     # pattern = fr'\b{re.escape(word.lower())}\b'
+    #     pattern = fr'(?<=[\s%20=]){re.escape(word.lower())}(?=[\s%20=])'
+    #     matches = re.findall(pattern, path.lower())
+    #     print(word.lower(),matches)
+    #     # Check the path
+    #     if re.search(pattern, path.lower()):
+    #         logging.info(f"Bad word detected in path, Request from IP: {origin_ip}, PATH: {path}, BODY: {body}, detected: {word}")
+    #         return False  # Block the request
+    #
+    #     # Check the body
+    #     if re.search(pattern, body.lower()):
+    #         logging.info(f"Bad word detected in body, Request from IP: {origin_ip}, PATH: {path}, BODY: {body}, detected: {word}")
+    #         return False  # Block the request
+    #
 
     # Predict using the trained model
     prediction = model.predict(feature_data)
@@ -444,16 +519,27 @@ async def threat_detection_middleware(request: Request, call_next):
     suspicious_ip_exp = await is_time_expired_async(origin_ip)
     sus = False
     sus_ip = None
+    is_new = False
     # Analyze the incoming request
     rde = req_redirect.good_redirect_route
-    if not await analyze_request(request) or suspicious_ip:
+    analysis = await analyze_request(request) 
+    if not analysis or suspicious_ip:
         # Block request if a threat is detected 
         logging.warning(f"Blocked request from IP: {origin_ip} to PATH: {request.url}")
         # return Response("Request blocked due to security threat", status_code=403)
-        if suspicious_ip:
+        if suspicious_ip or suspicious_ip_exp:
             await update_time_identified_async(origin_ip)
+
         else:
+            print("creating")
             await create_suspicious_ip_async(origin_ip,req_redirect)
+            is_new=True
+
+
+        if suspicious_ip_exp:
+            is_new=True
+            print("fetching")
+        
         sus = True
         rde = req_redirect.bad_redirect_route
         sus_ip = await fetch_suspicious_ip_async(origin_ip,req_redirect)
@@ -466,7 +552,7 @@ async def threat_detection_middleware(request: Request, call_next):
     
     res =  await proxy_request(request,rde,req_redirect)
     
-    await create_request_log(origin_ip,req_redirect,request,sus,sus_ip,res)
+    await create_request_log(origin_ip,req_redirect,request,sus,sus_ip,res,is_new,analysis)
 
 
     return res

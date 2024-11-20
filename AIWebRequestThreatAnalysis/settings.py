@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+        'allauth',
+    'allauth.account',
     ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -53,15 +55,24 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+  "allauth.account.middleware.AccountMiddleware",
     ]
 
 ROOT_URLCONF = 'AIWebRequestThreatAnalysis.urls'
 
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +144,5 @@ SUSPICOUS_BLOCK_TIMEOUT_SECONDS = 3600
 
 SESSION_COOKIE_SAMESITE = 'Lax'  # or 'None' if cross-site
 SESSION_COOKIE_SECURE = True  # if using HTTPS
+LOGIN_REDIRECT_URL = '/'  
+

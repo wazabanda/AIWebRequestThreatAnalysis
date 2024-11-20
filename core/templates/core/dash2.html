@@ -1,3 +1,6 @@
+{% load status_code_filters %}
+{% load request_type_filters %}
+
 <div class="container mx-auto p-6 max-w-7xl">
     <!-- Back Button -->
     <a hx-target="#main" hx-get='{% url "dashboard" id=sus.redirect.id%}' 
@@ -8,14 +11,17 @@
         Back to Dashboard
     </a>
 <style>
-.request-body-container {
-    max-height: 300px;  /* Adjust this height based on your design needs */
-    overflow-y: auto;   /* Enables vertical scrolling */
-    white-space: pre-wrap; /* Ensures long lines wrap instead of stretching the container */
-    word-wrap: break-word; /* Breaks long words that might overflow */
-    border-radius: 8px; /* Optional, for rounded corners */
-    border: 1px solid #e0e0e0; /* Optional, to add a subtle border */
-}
+    .request-body-container {
+        max-height: 300px;  /* Control the height of the container */
+        overflow-y: auto;   /* Allow vertical scrolling */
+        white-space: pre-wrap; /* Ensure proper line breaks for long text */
+        word-wrap: break-word; /* Break long words if needed */
+        border-radius: 8px;    /* Add rounded corners for better UI */
+        border: 1px solid #e0e0e0; /* Optional subtle border */
+        background-color: #f9fafb; /* Slightly distinct background */
+        padding: 0.5rem; /* Add padding for better readability */
+    }
+    
   </style>
     <!-- IP Information Header -->
     <div class="bg-white rounded-xl shadow-lg mb-8">
@@ -172,13 +178,13 @@
                         <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
                         <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Path</th>
                         <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
                         <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request Body</th>
                         <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-          {%for log in sus_logs%}
+                    {%for log in sus_logs%}
                     <tr class="hover:bg-gray-50 transition-colors duration-200">
             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{log.timestamp}}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
@@ -186,9 +192,13 @@
                         </td>
             <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">{{log.path | truncatechars:40}}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-800 font-medium">401</span>
+<span class="px-3 py-1 text-xs rounded-full {% status_code_color log.response_status_code %} font-medium">
+    {{ log.response_status_code }}
+</span>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.2 KB</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm {% request_type_color log.request_type %}">
+                            {{ log.request_type }}
+                        </td>
                         <td class="px-6 py-4">
                             <button class="text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none"
                                     onclick="toggleRequestBody('req-body-1')">
@@ -243,23 +253,26 @@
                         </div>
                         <div>
                             <h4 class="text-sm font-medium text-gray-500">Request Headers</h4>
-                            <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">
-              {{log.headers}}
-            </code></pre>
+                            <div class="max-w-full overflow-x-auto">
+                                <pre class="text-xs bg-gray-50 p-2 rounded mt-2 inline-block min-w-full"><code class="language-json">{{ log.headers | safe }}</code></pre>
+                            </div>
                         </div>
                     </div>
                     
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500">Request Body</h4>
-                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">
-            {{log.body}}
-          </code></pre>
-                    </div>
-    
-                    <div>
-                        <h4 class="text-sm font-medium text-gray-500">Response Body</h4>
-                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{{log.response_body}}</code></pre>
-                    </div>
+                    
+        <div class="mt-4">
+            <h4 class="text-sm font-medium text-gray-500">Request Body</h4>
+            <div class="max-w-full overflow-x-auto">
+                <pre class="text-xs bg-gray-50 p-2 rounded mt-2 inline-block min-w-full"><code class="language-json">{{ log.body | safe }}</code></pre>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h4 class="text-sm font-medium text-gray-500">Response Body</h4>
+            <div class="max-w-full overflow-x-auto">
+                <pre class="text-xs bg-gray-50 p-2 rounded mt-2 inline-block min-w-full"><code class="language-json">{{ log.response_body }}</code></pre>
+            </div>
+        </div>
                 </div>
             </div>
         </div>

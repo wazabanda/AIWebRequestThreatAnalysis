@@ -42,7 +42,7 @@ class SuspicousIP(models.Model):
 class RequestLog(models.Model):
 
     METHODS = (("GET","GET"),("POST","POST"))
-    REQ_TYPE = (("GOOD","GOOD"),("BAD","BAD"))
+    REQ_TYPE = (("GOOD","GOOD"),("BAD","BAD"),("BAD_ENTRY","BAD_ENTRY"),("CHECK","CHECK"))
     source_ip = models.CharField(max_length=64)
     sus_ip = models.ForeignKey(to=SuspicousIP,on_delete=models.CASCADE,null=True,blank=True,related_name="request_logs")
     path = models.CharField(max_length=255,blank=True)
@@ -53,6 +53,7 @@ class RequestLog(models.Model):
     timestamp = models.DateTimeField(default=timezone.now)
     redirect = models.ForeignKey(RequestRedirect,on_delete=models.PROTECT,null=True)
     response_body = models.TextField(blank=True)
+    response_status_code = models.CharField(max_length=3,blank=True,null=True)
 
     def save(self, *args, **kwargs):
         if self.pk:  # If the model instance already exists
