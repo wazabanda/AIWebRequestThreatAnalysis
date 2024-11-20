@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import Settings
 from django.utils import choices, timezone
 from django.core.exceptions import ValidationError
+from pandas.core.algorithms import mode
 
 # Create your models here.
 
@@ -27,6 +28,7 @@ class SuspicousIP(models.Model):
     time_identified = models.DateTimeField(default=timezone.now)
     time_allowed = models.DateTimeField(default=timezone.now)
     redirect = models.ForeignKey(to=RequestRedirect,on_delete=models.PROTECT)
+    first_seen = models.DateTimeField(default=timezone.now)
 
 
     @property
@@ -42,14 +44,15 @@ class RequestLog(models.Model):
     METHODS = (("GET","GET"),("POST","POST"))
     REQ_TYPE = (("GOOD","GOOD"),("BAD","BAD"))
     source_ip = models.CharField(max_length=64)
-    sus_ip = models.ForeignKey(to=SuspicousIP,on_delete=models.PROTECT,null=True,blank=True,related_name="request_logs")
+    sus_ip = models.ForeignKey(to=SuspicousIP,on_delete=models.CASCADE,null=True,blank=True,related_name="request_logs")
     path = models.CharField(max_length=255,blank=True)
     body = models.TextField(blank=True)
-    headers = models.TextField(blank=True)
+    headers = models.JSONField(blank=True,null=True)
     method = models.CharField(max_length=10,choices=METHODS,blank=True)
     request_type = models.CharField(max_length=10,choices=REQ_TYPE,blank=True)
     timestamp = models.DateTimeField(default=timezone.now)
     redirect = models.ForeignKey(RequestRedirect,on_delete=models.PROTECT,null=True)
+    response_body = models.TextField(blank=True)
 
     def save(self, *args, **kwargs):
         if self.pk:  # If the model instance already exists

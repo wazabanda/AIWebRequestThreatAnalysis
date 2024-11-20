@@ -50,6 +50,28 @@ def get_client_ip(request: Request) -> str:
     # If no 'X-Forwarded-For' header, fall back to the request's client
     return request.client.host
 
+def parse_form_data(body: bytes | str) -> dict:
+    """
+    Parse URL-encoded form data into a clean dictionary.
+    """
+    if isinstance(body, bytes):
+        body = body.decode('utf-8')
+        
+    form_dict = {}
+    try:
+        parsed = parse_qs(body)
+        for key, values in parsed.items():
+            value = values[0] if values else ''
+            decoded_value = unquote_plus(value)
+            form_dict[key] = decoded_value
+            
+        logging.info(f"Parsed form data: {form_dict}")
+        return form_dict
+    except Exception as e:
+        logging.error(f"Error parsing form data: {e}")
+        return {}
+
+
 # Function to analyze and detect threats in request data
 async def analyze_request(request: Request) -> bool:
     # Extract data from request
@@ -78,7 +100,9 @@ async def analyze_request(request: Request) -> bool:
     # Create a DataFrame for the input features
     feature_data = pd.DataFrame([combined_features], columns=feature_columns)
     feature_data.fillna(0,inplace=True)
-    print(body)
+    print("body")
+    print((await request.body()))
+    print("path")
     print(path)
     print(feature_data)
     # Check if the path or body contains any bad words
@@ -351,7 +375,7 @@ async def proxy_request(request: Request, rde: str, req) -> Response:
                     
                     # Merge cookies from redirect response
                     if 'set-cookie' in response.headers:
-                        for cookie_str in response.headers.getlist('set-cookie'):
+                        for cookie_str in response.headers.get_list('set-cookie'):
                             response_cookies.load(cookie_str)
             
             # Prepare response
@@ -437,12 +461,15 @@ async def threat_detection_middleware(request: Request, call_next):
     if not suspicious_ip and suspicious_ip_exp and sus==False:
         await update_time_allowed_async(origin_ip)
     
-    await create_request_log(origin_ip,req_redirect,request,sus,sus_ip)
+
     # Forward the request if it's safe
     
-    return await proxy_request(request,rde,req_redirect)
+    res =  await proxy_request(request,rde,req_redirect)
+    
+    await create_request_log(origin_ip,req_redirect,request,sus,sus_ip,res)
 
 
+    return res
     csrf_token = request.headers.get("x-csrftoken") or request.cookies.get("csrftoken")
 
 

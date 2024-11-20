@@ -1,192 +1,230 @@
-    <div class="container mx-auto p-6">
-        <!-- Back Button -->
-      <a hx-target="#main" hx-get='{% url "dashboard" id=sus.redirect.id%}' class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Dashboard
-        </a>
+<div class="container mx-auto p-6 max-w-7xl">
+    <!-- Back Button -->
+    <a hx-target="#main" hx-get='{% url "dashboard" id=sus.redirect.id%}' 
+       class="inline-flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-all duration-200 mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Dashboard
+    </a>
+<style>
+.request-body-container {
+    max-height: 300px;  /* Adjust this height based on your design needs */
+    overflow-y: auto;   /* Enables vertical scrolling */
+    white-space: pre-wrap; /* Ensures long lines wrap instead of stretching the container */
+    word-wrap: break-word; /* Breaks long words that might overflow */
+    border-radius: 8px; /* Optional, for rounded corners */
+    border: 1px solid #e0e0e0; /* Optional, to add a subtle border */
+}
+  </style>
+    <!-- IP Information Header -->
+    <div class="bg-white rounded-xl shadow-lg mb-8">
+        <div class="p-8">
+            <div class="flex justify-between items-start">
+                <div>
+          <h1 class="text-3xl font-bold text-gray-900" id="ip-address" hx-get="/api/ip-details" hx-trigger="load">{{sus.source_ip}}</h1>
+                    <p class="text-gray-500 mt-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+            First seen: {{sus.first_seen}}
+                    </p>
+                </div>
+                <div class="px-4 py-2 rounded-full bg-red-100 text-red-800 text-sm font-medium animate-pulse">
+                    High Risk IP
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- IP Information Header -->
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
-            <div class="p-6">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h1 class="text-2xl font-bold text-gray-900" id="ip-address" hx-get="/api/ip-details" hx-trigger="load">192.168.1.100</h1>
-                        <p class="text-gray-500 mt-1">First seen: 2024-03-10 08:23:45</p>
-                    </div>
-                    <div class="px-3 py-1 rounded-full bg-red-100 text-red-800 text-sm font-medium">
-                        High Risk
+    <!-- Statistics Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center">
+                <div class="p-2 bg-blue-50 rounded-lg mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium text-gray-600">Total Attempts</h3>
+                    <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/attempts" hx-trigger="load every 30s">
+            {{total_logs}}
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Statistics Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-sm font-medium text-gray-600">Total Attempts</h3>
-                <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/attempts" hx-trigger="load every 30s">
-                    1,234
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center">
+                <div class="p-2 bg-red-50 rounded-lg mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
                 </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-sm font-medium text-gray-600">Success Rate</h3>
-                <div class="mt-2 text-2xl font-bold text-red-600" hx-get="/api/ip-stats/success-rate" hx-trigger="load every 30s">
-                    2.4%
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-sm font-medium text-gray-600">Average Request Size</h3>
-                <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/avg-size" hx-trigger="load every 30s">
-                    2.3 KB
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 class="text-sm font-medium text-gray-600">Last Attempt</h3>
-                <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/last-attempt" hx-trigger="load every 30s">
-                    2 mins ago
-                </div>
-            </div>
-        </div>
-
-        <!-- Request Pattern Analysis -->
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
-            <div class="p-6 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Request Pattern Analysis</h2>
-            </div>
-            <div class="p-6">
-                <div class="space-y-4">
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 w-32">Most Common Path:</span>
-                        <span class="text-sm font-mono bg-gray-100 px-2 py-1 rounded">/api/auth/login</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 w-32">Request Method:</span>
-                        <span class="text-sm font-mono bg-gray-100 px-2 py-1 rounded">POST (92%)</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 w-32">User Agent:</span>
-                        <span class="text-sm font-mono bg-gray-100 px-2 py-1 rounded">Mozilla/5.0 (compatible; Bot/1.0)</span>
+                <div>
+                    <h3 class="text-sm font-medium text-gray-600">Success Rate</h3>
+                    <div class="mt-2 text-2xl font-bold text-red-600" hx-get="/api/ip-stats/success-rate" hx-trigger="load every 30s">
+            {{percentage}}%
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-            <div class="p-6 border-b border-gray-200">
-                <div class="flex justify-between items-center">
-                    <h2 class="text-lg font-semibold text-gray-900">Request History</h2>
-                    <div class="flex space-x-2">
-                        <select class="text-sm border border-gray-300 rounded px-2 py-1"
-                                hx-get="/api/attempts"
-                                hx-target="#attempts-table"
-                                name="filter">
-                            <option value="all">All Requests</option>
-                            <option value="failed">Failed Only</option>
-                            <option value="success">Successful Only</option>
-                            <option value="with-body">With Request Body</option>
-                        </select>
-                        <select class="text-sm border border-gray-300 rounded px-2 py-1"
-                                hx-get="/api/attempts"
-                                hx-target="#attempts-table"
-                                name="timeframe">
-                            <option value="1h">Last Hour</option>
-                            <option value="24h">Last 24 Hours</option>
-                            <option value="7d">Last 7 Days</option>
-                            <option value="30d">Last 30 Days</option>
-                        </select>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center">
+                <div class="p-2 bg-purple-50 rounded-lg mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <path d="M22 6l-10 7L2 6"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium text-gray-600">Average Request Size</h3>
+                    <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/avg-size" hx-trigger="load every 30s">
+                        2.3 KB
                     </div>
                 </div>
             </div>
-            <div class="overflow-x-auto">
-                <table class="w-full" id="attempts-table">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Timestamp</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Path</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request Body</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-03-15 14:23:45</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">POST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">/api/auth/login</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">401</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.2 KB</td>
-                            <td class="px-6 py-4 text-sm">
-                                <button class="text-blue-600 hover:text-blue-800"
-                                        onclick="toggleRequestBody('req-body-1')">
-                                    Show Body
-                                </button>
-                                <div id="req-body-1" class="hidden mt-2">
-                                    <pre class="text-xs bg-gray-50 p-2 rounded"><code class="language-json">{
-        "username": "admin",
-        "password": "[REDACTED]",
-        "remember": true
-    }</code></pre>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600">
-                                <button hx-get="/api/request-details/1"
-                                        hx-target="#request-modal"
-                                        class="hover:underline">
-                                    View Details
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-03-15 14:23:42</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">POST</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">/api/users/create</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">403</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.4 KB</td>
-                            <td class="px-6 py-4 text-sm">
-                                <button class="text-blue-600 hover:text-blue-800"
-                                        onclick="toggleRequestBody('req-body-2')">
-                                    Show Body
-                                </button>
-                                <div id="req-body-2" class="hidden mt-2">
-                                    <pre class="text-xs bg-gray-50 p-2 rounded"><code class="language-json">{
-        "username": "newadmin",
-        "email": "admin@example.com",
-        "role": "admin",
-        "permissions": ["all"]
-    }</code></pre>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600">
-                                <button hx-get="/api/request-details/2"
-                                        hx-target="#request-modal"
-                                        class="hover:underline">
-                                    View Details
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center">
+                <div class="p-2 bg-green-50 rounded-lg mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium text-gray-600">Last Attempt</h3>
+                    <div class="mt-2 text-2xl font-bold text-gray-900" hx-get="/api/ip-stats/last-attempt" hx-trigger="load every 30s">
+                        2 mins ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Pattern Analysis -->
+    <div class="bg-white rounded-xl shadow-lg mb-8">
+        <div class="p-6 border-b border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-900">Request Pattern Analysis</h2>
+        </div>
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="space-y-2">
+                    <h3 class="text-sm font-medium text-gray-500">Most Common Path</h3>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm font-mono bg-gray-100 px-3 py-2 rounded-lg flex-1">/api/auth/login</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-sm font-medium text-gray-500">Request Method</h3>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm font-mono bg-gray-100 px-3 py-2 rounded-lg flex-1">POST (92%)</span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-sm font-medium text-gray-500">User Agent</h3>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm font-mono bg-gray-100 px-3 py-2 rounded-lg flex-1 truncate">Mozilla/5.0 (compatible; Bot/1.0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request History -->
+    <div class="bg-white rounded-xl shadow-lg">
+        <div class="p-6 border-b border-gray-100">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+                <h2 class="text-xl font-semibold text-gray-900">Request History</h2>
+                <div class="flex flex-wrap gap-2">
+                    <select class="text-sm border border-gray-300 rounded-lg px-3 py-2 bg-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            hx-get="/api/attempts"
+                            hx-target="#attempts-table"
+                            name="filter">
+                        <option value="all">All Requests</option>
+                        <option value="failed">Failed Only</option>
+                        <option value="success">Successful Only</option>
+                        <option value="with-body">With Request Body</option>
+                    </select>
+                    <select class="text-sm border border-gray-300 rounded-lg px-3 py-2 bg-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            hx-get="/api/attempts"
+                            hx-target="#attempts-table"
+                            name="timeframe">
+                        <option value="1h">Last Hour</option>
+                        <option value="24h">Last 24 Hours</option>
+                        <option value="7d">Last 7 Days</option>
+                        <option value="30d">Last 30 Days</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full" id="attempts-table">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Timestamp</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Path</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request Body</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+          {%for log in sus_logs%}
+                    <tr class="hover:bg-gray-50 transition-colors duration-200">
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{log.timestamp}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+              <span class="px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-800 font-medium">{{log.method}}</span>
+                        </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">{{log.path | truncatechars:40}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-800 font-medium">401</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.2 KB</td>
+                        <td class="px-6 py-4">
+                            <button class="text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none"
+                                    onclick="toggleRequestBody('req-body-1')">
+                                Show Body
+                            </button>
+                            <div id="req-body-1" class="hidden mt-2">
+                                <pre class="text-xs bg-gray-50 p-2 rounded-lg"><code class="language-json">{
+"username": "admin",
+"password": "[REDACTED]",
+"remember": true
+}</code></pre>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <button hx-get="/api/request-details/1"
+                hx-target="#request-modal-{{log.id}}"
+                                    class="text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none">
+                                View Details
+                            </button>
+                        </td>
+                    </tr>
+          {%endfor%}
+                    <!-- Additional rows follow the same pattern -->
+                </tbody>
+            </table>
             </div>
             <!-- Pagination remains the same -->
         </div>
     
         <!-- Updated Request Details Modal -->
-        <div id="request-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        {%for log in sus_logs%}
+        <div id="request-modal-{{log.id}}" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
             <div class="relative top-20 mx-auto p-5 border w-full max-w-4xl shadow-lg rounded-md bg-white">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-semibold text-gray-900">Request Details</h3>
-                    <button onclick="document.getElementById('request-modal').classList.add('hidden')" class="text-gray-400 hover:text-gray-500">
+                    <button onclick="document.getElementById('request-modal-{{log.id}}').classList.add('hidden')" class="text-gray-400 hover:text-gray-500">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -205,40 +243,27 @@
                         </div>
                         <div>
                             <h4 class="text-sm font-medium text-gray-500">Request Headers</h4>
-                            <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{
-        "Content-Type": "application/json",
-        "User-Agent": "Mozilla/5.0 (compatible; Bot/1.0)",
-        "Accept": "application/json",
-        "Content-Length": "1234"
-    }</code></pre>
+                            <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">
+              {{log.headers}}
+            </code></pre>
                         </div>
                     </div>
                     
                     <div>
                         <h4 class="text-sm font-medium text-gray-500">Request Body</h4>
-                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{
-        "username": "admin",
-        "password": "[REDACTED]",
-        "remember": true,
-        "additional_params": {
-            "client_id": "mobile_app",
-            "grant_type": "password"
-        }
-    }</code></pre>
+                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">
+            {{log.body}}
+          </code></pre>
                     </div>
     
                     <div>
                         <h4 class="text-sm font-medium text-gray-500">Response Body</h4>
-                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{
-        "error": "invalid_credentials",
-        "message": "Invalid username or password",
-        "timestamp": "2024-03-15T14:23:45Z"
-    }</code></pre>
+                        <pre class="text-xs bg-gray-50 p-2 rounded mt-2"><code class="language-json">{{log.response_body}}</code></pre>
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <script>
             // Toggle request body visibility
             function toggleRequestBody(id) {
@@ -259,8 +284,11 @@
     
             // Modal handling
             document.body.addEventListener('click', function(event) {
-                if (event.target.matches('[hx-target="#request-modal"]')) {
-                    document.getElementById('request-modal').classList.remove('hidden');
+                if (event.target.matches('[hx-target="#request-modal-{{log.id}}"]')) {
+                    document.getElementById('request-modal-{{log.id}}').classList.remove('hidden');
                 }
             });
         </script>
+
+
+        {%endfor%}

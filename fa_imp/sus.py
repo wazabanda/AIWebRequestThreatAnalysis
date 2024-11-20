@@ -17,7 +17,7 @@ feature_columns = [
 
 # Define the list of bad words
 bad_words = [
-    "select", "from", "where", "insert", "into", "values", "' or", "update", "set", "delete", "drop",
+    "select", "from", "where", "insert", "into", "values", "' or", "or 1=1", "update", "set", "delete", "drop",
     "table", "database", "schema", "union", "all", "concat", "group_concat", "column_name",
     "information_schema", "sys.schemas", "user()", "current_user()", "session_user()",
     "system_user()", "database()", "version()", "@@version", "@@datadir", "@@basedir",

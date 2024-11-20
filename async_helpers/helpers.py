@@ -2,7 +2,7 @@
 from core.models import *
 from asgiref.sync import sync_to_async
 from datetime import timedelta
-from fastapi import  Request
+from fastapi import  Request, Response
 
 
 async def get_suspicious_ip_async(source_ip,redirect):
@@ -52,16 +52,19 @@ async def update_time_allowed_async(source_ip):
     )()
 
 
-async def create_request_log(source_ip,redirect,request:Request,req_class,sus_ip):
+async def create_request_log(source_ip,redirect,request:Request,req_class,sus_ip,response:Response):
+    import json
     query_parsm = request.query_params
-    path = request.url
+    path = request.url.path + request.url.query
     body = (await request.body()).decode("utf-8") if request.method != "GET" else ""
-    headers = dict(request.headers)
+    # r_body = (await response.body()).decode("utf-8") 
+    headers = json.dumps(dict(request.headers))
     method = request.method
+    r_body = bytes(response.body).decode('utf-8')
 
     await sync_to_async(
             lambda: RequestLog.objects.create(source_ip=source_ip,path=path,body=body,headers=headers,method=method,
-                    request_type="GOOD" if not req_class else "BAD",redirect=redirect,sus_ip=sus_ip)
+                    request_type="GOOD" if not req_class else "BAD",redirect=redirect,sus_ip=sus_ip,response_body=r_body)
     )()
 
 
