@@ -28,7 +28,7 @@ bad_words = [
     "php_uname", "phpinfo", "phpversion", "highlight_file", "show_source", "config_path",
     "document.cookie", "document.write", "window.location", "window.navigator.userAgent",
     "location.href", "location.host", "location.pathname", "location.protocol", "alert",
-    "prompt", "confirm", "iframe", "script", ".img", ".svg", "base64_decode", "base64_encode",
+    "prompt", "confirm", "iframe", "script", ".img", "base64_decode", "base64_encode",
     "hex2bin", "bin2hex", "urldecode", "urlencode", "rawurldecode", "rawurlencode",
     "md5", "sha1", "sha256", "sha384", "sha512", "crc32", "crypt", "getimagesizefromstring",
     "exif_read_data", "exif_thumbnail", "exif_imagetype", "gd_info", "getimagesize",
